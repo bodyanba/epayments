@@ -1,0 +1,5028 @@
+@import libs/variables, lib
+
+html
+  -webkit-font-smoothing: antialiased
+  -webkit-tap-highlight-color: transparent
+
+*
+  outline: none !important
+
+::-moz-selection
+  background: $rgba-blue-1
+
+::selection
+  background: $rgba-blue-1
+
+ol, ul
+  &.is-list-styled
+    padding-left: 2rem
+    margin: 1rem 0
+  &.is-list-style-position-inside
+    list-style-position: inside
+  &.list-style-dash
+    li
+      list-style: none
+      position: relative
+      &:before
+        content: "\2014"
+        position: absolute
+        width: 3rem
+        height: 1rem
+        top: 0
+        left: -3rem
+    &.is-list-style-position-inside
+      list-style-position: outside
+      padding-left: 3rem
+
+.js-x-paper
+  height: 100vh
+
+.is-img-pixelated
+  -ms-interpolation-mode: nearest-neighbor
+  image-rendering: -webkit-optimize-contrast
+  image-rendering: -moz-crisp-edges
+  image-rendering: -o-pixelated
+  image-rendering: pixelated
+
+h1, h2, h3, h4, h5, h6
+  transition: font-size 0.4s ease-in-out
+
+.b-body
+  .x-main
+    position: relative
+    background: #fff
+    height: auto
+    transform: scale(1)
+  .x-mobile-menu
+    position: fixed
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    opacity: 0
+    overflow: auto
+    z-index: -1
+    padding-top: 11rem
+    &.with-backboard
+      padding-top: 17rem
+  &.x-mobile-menu-open-finished:not(.x-mobile-menu-open)
+    overflow: unset
+    .x-mobile-menu
+      transition: opacity 0.35s cubic-bezier(0, 0, 0.2, 1)
+      opacity: 0
+  &.x-mobile-menu-open
+    &.x-mobile-menu-open-finished .x-mobile-menu
+      transition: opacity 1s cubic-bezier(0, 0, 0.2, 1) 0.35s
+      opacity: 1
+      z-index: 0
+    .x-main
+      display: none
+
+@media screen and (min-width: 48.5em)
+  .b-body .x-mobile-menu
+    padding-top: 17rem
+
+@media screen and (min-width: 30em)
+  .b-body .x-mobile-menu.with-backboard
+    padding-top: 19rem
+
+.b-content
+  padding-top: 7rem
+  padding-bottom: 6rem
+  .content-section
+    margin-bottom: 11rem
+  &.without-padding-bottom
+    padding-bottom: 0
+  &.without-padding-top
+    padding-top: 0
+  &.without-padding
+    padding-bottom: 0
+    padding-top: 0
+  &.large-padding-top
+    padding-top: 22.5rem
+
+@media screen and (min-width: 48.5em)
+  .b-content
+    padding-top: 6rem
+    padding-bottom: 12rem
+
+@media screen and (min-width: 64em)
+  .b-content
+    padding-top: 9rem
+
+.b-content-tariff
+  padding-top: 3rem
+  padding-bottom: 9rem
+
+.b-first-block
+  padding-top: 32rem
+  .info
+    margin-bottom: 5rem
+
+.b-background
+  position: relative
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  padding-top: 7rem
+  height: 46rem
+  overflow: hidden
+  &.has-full-height
+    height: 100vh
+  .background-content
+    -webkit-box-flex: 0
+    -ms-flex: 0 0 100%
+    flex: 0 0 100%
+  &.has-bg
+    background: $clr-3
+    z-index: -1
+  &.has-footer .footer
+    position: absolute
+    right: 0
+    bottom: 0
+    left: 0
+  &.background-fca
+    background-color: $clr-9
+  &.has-only-title
+    height: 36rem
+  &.is-content-box
+    height: calc(100vh - 9rem)
+    margin-top: 0
+    padding-top: 7rem
+
+@media screen and (min-width: 64em)
+  .b-background.has-footer
+    padding-bottom: 6rem
+
+@media screen and (min-width: 64em)
+  .b-background
+    height: 49rem
+
+@media screen and (min-width: 80em)
+  .b-background
+    height: 60rem
+
+@media screen and (min-width: 64em)
+  .b-background.has-only-title
+    height: 42rem
+
+@media screen and (min-width: 80em)
+  .b-background.has-only-title
+    height: 53rem
+
+@media screen and (min-width: 30em)
+  .b-background.is-content-box
+    padding-top: 5.5rem
+
+@media screen and (min-width: 48.5em)
+  .b-background.is-content-box
+    padding-top: 8rem
+
+@media screen and (min-width: 64em)
+  .b-background.is-content-box
+    padding-top: 9.5rem
+
+@media screen and (min-width: 80em)
+  .b-background.is-content-box
+    max-height: 90rem
+    padding-top: 13rem
+
+.b-mobile-menu
+  position: relative
+  color: $clr-1
+  .arrow-link-label, h5
+    font-weight: 600
+    line-height: 2rem
+    font-size: 2rem
+    margin-bottom: 2.67001rem
+    padding-top: 0.33001rem
+  .mobile-menu-main
+    padding-top: 0
+    padding-bottom: 3.5rem
+  .mobile-menu-bottom
+    padding-top: 3rem
+    padding-bottom: 1.1rem
+  .mobile-menu-item
+    color: $clr-4
+    &:hover
+      color: $clr-1
+  .nav-titled-list
+    margin-top: 2rem
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -ms-flex-direction: column
+    flex-direction: column
+    .nav-list-item
+      line-height: 2rem
+      font-size: 2rem
+      margin-bottom: 2.67001rem
+      padding-top: 0.33001rem
+  .nav-untitled-list
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -ms-flex-direction: column
+    flex-direction: column
+    .nav-list-item
+      line-height: 2rem
+      font-size: 1.75rem
+      margin-bottom: 2.58626rem
+      padding-top: 0.41376rem
+  .mobile-menu-line
+    height: 1px
+    background: $clr-12
+  .create
+    width: 100%
+    line-height: 4rem
+    font-size: 2rem
+    border-width: 1px
+    border-style: solid
+    padding: 1.5rem 0
+  .mobile-app-btn
+    width: 15rem
+    height: 5rem
+    margin-top: 3rem
+    &:first-of-type
+      margin-right: 3rem
+    .mobile-btn-icon
+      fill: $clr-5
+      &:hover
+        fill: $clr-1
+
+@media screen and (min-width: 48.5em)
+  .b-mobile-menu
+    .arrow-link-label, h5
+      line-height: 2rem
+      font-size: 2.25rem
+      margin-bottom: 2.75376rem
+      padding-top: 0.24626rem
+
+@media screen and (min-width: 30em)
+  .b-mobile-menu .mobile-menu-main
+    padding-top: 2rem
+
+@media screen and (min-width: 30em)
+  .b-mobile-menu .nav-titled-list
+    margin-top: 0
+
+@media screen and (min-width: 30em)
+  .b-mobile-menu .nav-untitled-list .nav-list-item
+    line-height: 2rem
+    font-size: 1.75rem
+    margin-bottom: 1.83626rem
+    padding-top: 0.41376rem
+
+@media screen and (min-width: 30em)
+  .b-mobile-menu .mobile-app-btn
+    margin-top: 0
+
+@media screen and (min-width: 48.5em)
+  .b-figure
+    position: sticky
+    top: 9rem
+
+.b-logo
+  width: 18rem
+  height: 6rem
+  padding-top: 1rem
+  .icon
+    height: 4rem
+
+.b-fca-info
+  background: #fff
+  &.is-sticky
+    transform: translateY(-22rem)
+    transition: top 0.2s cubic-bezier(0, 0, 0.2, 1)
+    margin-bottom: -22rem
+
+.b-content-fca-blocks
+  padding-top: 3rem
+  &:first-of-type
+    padding-top: 2rem
+  p
+    padding-top: 0.75rem
+    + p
+      padding-top: 1.75rem
+
+.b-content-careers
+  > .item
+    margin-bottom: 6rem
+    .title
+      display: -webkit-box
+      display: -ms-flexbox
+      display: flex
+      .icon-title
+        padding-top: 1.6rem
+        margin-right: .6rem
+        font-size: 20px
+        font-weight: 700
+      .label-title
+        font-size: 20px
+  .nowrap
+    white-space: nowrap
+
+.b-map-container
+  height: 43rem
+  padding: 0
+  margin-top: 2rem
+  margin-bottom: 3rem
+  overflow: hidden
+  .embed-map
+    height: 100%
+
+@media screen and (min-width: 48.5em)
+  .b-map-container
+    height: 32rem
+
+@media screen and (min-width: 64em)
+  .b-map-container
+    height: 45rem
+
+.b-select-lang
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  color: #fff
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  font-size: 1.75rem
+  .lang-toggler
+    width: 2rem
+    height: 2rem
+    svg
+      fill: #fff
+  .list
+    background: $clr-1
+    margin-top: .5rem
+    padding: 1.5rem 2rem 1rem
+    left: auto
+    right: -7rem
+    width: 20rem
+    transition: color .3s ease-out
+    z-index: 10
+    &:hover
+      .list-item a, .list-lang-item a
+        color: $clr-5
+    .list-item, .list-lang-item
+      list-style: none
+      padding: 1rem
+      cursor: pointer
+    .list-item a, .list-lang-item a
+      color: #fff
+      transition: color .3s ease-out
+      display: block
+    .list-item a:hover, .list-lang-item a:hover
+      color: #fff
+    .list-item.selected, .list-lang-item.selected
+      display: none
+  &.is-mobile
+    display: block
+    margin-top: 5rem
+    padding: 0
+    font-size: 2.5rem
+    margin-right: 0
+    .list
+      margin: 1.5rem 1rem 1rem
+      left: -2rem
+      right: auto
+      padding: 0 0 8rem
+    .lang-toggler
+      width: 3rem
+      height: 3rem
+  &.is-dark
+    color: $clr-1
+    svg
+      fill: $clr-1
+    .list
+      background: #fff
+    .list-item
+      &:hover a, a
+        color: $clr-1
+    .list-lang-item
+      &:hover a, a
+        color: $clr-1
+  &.is-in-footer
+    -webkit-box-pack: start
+    -ms-flex-pack: start
+    justify-content: flex-start
+    margin-top: 4rem
+    .title
+      display: -webkit-box
+      display: -ms-flexbox
+      display: flex
+      -webkit-box-align: center
+      -ms-flex-align: center
+      align-items: center
+      .flag
+        margin-right: 1rem
+    .list
+      padding: 1rem
+      left: -1rem
+      transform: translateY(calc(-100% - 5rem))
+      .list-lang-item
+        .flag
+          margin-right: 1rem
+        a
+          display: -webkit-inline-box
+          display: -ms-inline-flexbox
+          display: inline-flex
+          -webkit-box-align: center
+          -ms-flex-align: center
+          align-items: center
+
+@media screen and (min-width: 48.5em)
+  .b-select-lang.is-in-footer
+    -webkit-box-pack: end
+    -ms-flex-pack: end
+    justify-content: flex-end
+    margin-left: auto
+    margin-top: 0
+
+@media screen and (min-width: 48.5em)
+  .b-select-lang.is-in-footer .list
+    left: auto
+    right: -6rem
+
+.b-example .example-item
+  border: 1px solid $clr-12
+  margin-bottom: 1rem
+  text-align: center
+  padding: 5rem 0
+  &.is-dark
+    border-color: $clr-1
+    background-color: $clr-1
+  .big-logo
+    width: 26rem
+    height: 6rem
+
+@media screen and (min-width: 48.5em)
+  .b-example .example-item
+    margin-bottom: 2rem
+
+@media screen and (min-width: 64em)
+  .b-example .example-item
+    margin-bottom: 3rem
+
+@media screen and (min-width: 80em)
+  .b-example .example-item
+    margin-bottom: 4rem
+
+.b-file-upload
+  margin-top: 1rem
+  .file-upload-info
+    width: 100%
+  .file-upload-control
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    .file-upload-icon
+      display: -webkit-box
+      display: -ms-flexbox
+      display: flex
+      -webkit-box-pack: end
+      -ms-flex-pack: end
+      justify-content: flex-end
+      -webkit-box-align: end
+      -ms-flex-align: end
+      align-items: flex-end
+      width: 5rem
+      height: 7rem
+      min-width: 5rem
+      background: url(/images/file/file-upload-2b1506f16a.svg)
+      color: #fff
+      font-size: 1.2rem
+      padding-right: .9rem
+      text-transform: uppercase
+      margin-top: 0.65rem
+      &.is-pdf
+        background: url(/images/file/file-upload-pdf-a8ab049a37.svg)
+    .file-upload-text
+      margin-left: 2rem
+      display: -webkit-inline-box
+      display: -ms-inline-flexbox
+      display: inline-flex
+      -ms-flex-line-pack: end
+      align-content: flex-end
+      -ms-flex-wrap: wrap
+      flex-wrap: wrap
+      .file-upload-name
+        line-height: 1.19
+        font-weight: 600
+        -ms-flex-preferred-size: 100%
+        flex-basis: 100%
+      .file-upload-size
+        color: $clr-2
+        font-size: 1.75rem
+        -ms-flex-preferred-size: 100%
+        flex-basis: 100%
+        margin-top: 0.5rem
+  &.is-media
+    margin-bottom: 7rem
+    .file-upload-info
+      margin-top: 2rem
+    .file-upload-control
+      margin-top: 3rem
+      .file-upload-text
+        width: 22rem
+
+@media screen and (min-width: 48.5em)
+  .b-file-upload
+    margin-top: 0
+
+.b-accordion
+  border-top: 1px solid $clr-12
+  margin-top: 2rem
+  .accordion-item
+    color: $clr-1
+    padding: 2rem 0
+    border-bottom: 1px solid $clr-12
+    .accordion-item-title
+      padding-top: 0
+      width: calc(100% - 4rem)
+    .accordion-item-toggler
+      width: 3rem
+      height: 3rem
+      svg
+        fill: $clr-1
+    .accordion-item-content
+      margin-top: 2rem
+      margin-bottom: 3rem
+
+.b-table-tariffs
+  margin-bottom: 7rem
+  .th-tariff-item, .tr-tariff-item
+    -ms-flex-preferred-size: 100%
+    flex-basis: 100%
+    padding-top: 1rem
+    padding-bottom: 1rem
+    font-weight: 600
+  .th-tariff-item.has-font-weight-regular, .tr-tariff-item.has-font-weight-regular
+    font-weight: 500
+    line-height: 2.25rem
+    font-size: 1.75rem
+    margin-bottom: -.67874rem
+    padding-top: 0.67876rem
+  .th-tariff-item:first-of-type, .tr-tariff-item:first-of-type
+    -ms-flex-preferred-size: 100%
+    flex-basis: 100%
+    font-weight: 500
+    color: $clr-4
+  .th-tariff-item:last-of-type, .tr-tariff-item:last-of-type
+    -ms-flex-preferred-size: 100%
+    flex-basis: 100%
+  .th-tariff
+    padding-top: 1.5rem
+    padding-bottom: 1.5rem
+    margin-bottom: 2rem
+    background: $clr-9
+    position: sticky
+    top: -1px
+    z-index: 4
+    transition: top 0.25s cubic-bezier(0, 0, 0.2, 1)
+  .th-tariff-item
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    font-weight: 600
+    color: $clr-1
+    &:first-of-type
+      font-weight: 600
+      color: $clr-1
+  .tr-tariff
+    border-bottom: 1px solid $clr-12
+    &.without-icon .tr-content .tr-tariff-item
+      .operation, &:nth-of-type(2)
+        padding-left: 0
+    .operation .operation-name
+      display: -webkit-box
+      display: -ms-flexbox
+      display: flex
+    &.is-sub
+      border-bottom: 0
+      font-size: 1.75rem
+      line-height: 1.5
+      &:before
+        display: block
+        content: ""
+        border-bottom: 1px solid $clr-12
+        margin-left: 4rem
+    .tr-content
+      padding-top: 2rem
+      padding-bottom: 2rem
+      .tr-tariff-item
+        padding-right: 3rem
+        &.without-padding
+          padding-right: 0
+        &:nth-of-type(2)
+          padding-left: 4rem
+        .operation
+          display: -webkit-box
+          display: -ms-flexbox
+          display: flex
+          padding-left: 4rem
+          position: relative
+          padding-right: 1rem
+          &.has-long-name
+            .operation-toggler
+              -webkit-box-ordinal-group: 2
+              -ms-flex-order: 1
+              order: 1
+              display: block
+              width: 100%
+              padding-top: 2rem
+              cursor: pointer
+              color: $clr-blue-3
+            .operation-toggler-icon
+              display: inline-block
+              vertical-align: middle
+              width: 2rem
+              height: 2rem
+              margin-left: 1rem
+              transition: transform .3s ease
+              svg
+                fill: $clr-blue-3
+            .operation-name
+              display: block
+              display: -webkit-box
+              overflow: hidden
+              text-overflow: ellipsis
+              -webkit-box-orient: vertical
+            input[type=checkbox]
+              display: none
+              ~ .operation-toggler ~ .operation-name
+                -webkit-line-clamp: 2
+                height: 3em
+              &:checked ~ .operation-toggler
+                .operation-toggler-icon
+                  transform: scale(-1)
+                ~ .operation-name
+                  -webkit-line-clamp: initial
+                  height: auto
+        .operation-icon
+          position: absolute
+          left: 0
+          width: 3rem
+          height: 3rem
+          display: inline-block
+          margin-right: 1rem
+        .min-max
+          color: $clr-4
+          font-size: 1.75rem
+          font-weight: 500
+        &.is-limits-content
+          display: -webkit-box
+          display: -ms-flexbox
+          display: flex
+          -ms-flex-wrap: wrap
+          flex-wrap: wrap
+          -ms-flex-preferred-size: 100%
+          flex-basis: 100%
+          font-size: 1.75rem
+          padding-right: 0
+      .limits-item
+        &:nth-child(odd)
+          font-weight: 500
+          color: $clr-4
+          -ms-flex-preferred-size: 60%
+          flex-basis: 60%
+          padding-right: 4rem
+          padding-left: 4rem
+        &:nth-child(2n)
+          padding-bottom: 2rem
+          padding-left: 4rem
+          font-weight: 600
+          color: $clr-1
+        &:last-child
+          padding-bottom: 0
+      .dropdown-limits
+        .toggler-limits
+          display: block
+          width: 100%
+          padding-bottom: 2rem
+          padding-left: 4rem
+          cursor: pointer
+          color: $clr-blue-3
+          font-size: 2rem
+          font-weight: 500
+          .toggler-limits-icon
+            display: inline-block
+            vertical-align: middle
+            width: 2rem
+            height: 2rem
+            margin-left: 1rem
+            transition: transform .3s ease
+            svg
+              fill: $clr-blue-3
+        input[type=checkbox]
+          display: none
+          ~ .limits-item
+            display: none
+          &:checked ~
+            label .toggler-limits .toggler-limits-icon
+              transform: scale(-1)
+            .limits-item
+              display: block
+    &:last-of-type
+      border-bottom: 0
+  &.is-last .tr-tariff
+    border-bottom: 1px solid $clr-12
+  &.th-scrolled-up .th-tariff
+    top: calc(6.5rem - 1px)
+
+@media screen and (min-width: 30em)
+  .b-table-tariffs
+    .th-tariff-item, .tr-tariff-item
+      -ms-flex-preferred-size: 30%
+      flex-basis: 30%
+
+@media screen and (min-width: 30em)
+  .b-table-tariffs
+    .th-tariff-item:first-of-type, .tr-tariff-item:first-of-type
+      -ms-flex-preferred-size: 60%
+      flex-basis: 60%
+
+@media screen and (min-width: 64em)
+  .b-table-tariffs
+    .th-tariff-item:first-of-type, .tr-tariff-item:first-of-type
+      -ms-flex-preferred-size: 40%
+      flex-basis: 40%
+
+@media screen and (min-width: 30em)
+  .b-table-tariffs
+    .th-tariff-item:last-of-type, .tr-tariff-item:last-of-type
+      -ms-flex-preferred-size: 40%
+      flex-basis: 40%
+
+@media screen and (min-width: 64em)
+  .b-table-tariffs
+    .th-tariff-item:last-of-type, .tr-tariff-item:last-of-type
+      -ms-flex-preferred-size: 30%
+      flex-basis: 30%
+
+@media screen and (min-width: 48.5em)
+  .b-table-tariffs .tr-tariff.is-sub
+    font-size: inherit
+
+@media screen and (min-width: 30em)
+  .b-table-tariffs .tr-tariff .tr-content .tr-tariff-item:nth-of-type(2)
+    padding-left: 0
+
+@media screen and (min-width: 48.5em)
+  .b-table-tariffs .tr-tariff .tr-content .tr-tariff-item
+    padding-right: 0
+
+@media screen and (min-width: 48.5em)
+  .b-table-tariffs .tr-tariff .tr-content .tr-tariff-item .operation
+    padding-right: 5rem
+
+@media screen and (min-width: 30em)
+  .b-table-tariffs .tr-tariff .tr-content .tr-tariff-item.is-limits-content
+    font-size: 2rem
+
+@media screen and (min-width: 64em)
+  .b-table-tariffs .tr-tariff .tr-content .tr-tariff-item.is-limits-content
+    display: block
+    -ms-flex-preferred-size: 30%
+    flex-basis: 30%
+    font-size: 1.75rem
+
+@media screen and (min-width: 64em)
+  .b-table-tariffs .tr-tariff .tr-content .limits-item:nth-child(odd)
+    padding-left: 0
+
+@media screen and (min-width: 30em)
+  .b-table-tariffs .tr-tariff .tr-content .limits-item:nth-child(2n)
+    padding-left: 0
+
+@media screen and (min-width: 64em)
+  .b-table-tariffs .tr-tariff .tr-content
+    -ms-flex-preferred-size: 30%
+    flex-basis: 30%
+
+@media screen and (min-width: 30em)
+  .b-table-tariffs .tr-tariff .tr-content .dropdown-limits .toggler-limits
+    display: none
+
+@media screen and (min-width: 30em)
+  .b-table-tariffs .tr-tariff .tr-content .dropdown-limits input[type=checkbox] ~ .limits-item
+    display: block
+
+@media screen and (min-width: 30em)
+  .b-table-tariffs.th-scrolled-up .th-tariff
+    top: calc(7.5rem - 1px)
+
+.b-tariff-group-table
+  position: relative
+  &.is-first
+    padding-top: 0
+
+.b-tariff-table-control
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  -webkit-box-pack: end
+  -ms-flex-pack: end
+  justify-content: flex-end
+  margin-bottom: 2rem
+  .control-item
+    margin-bottom: 2rem
+    .toggler
+      height: 5.5rem
+    &.is-type-card
+      width: 100%
+      min-width: 26rem
+    &.is-disabled img
+      filter: grayscale(50%)
+    &.is-currency
+      width: 100%
+      min-width: 22rem
+      .title
+        vertical-align: middle
+      img
+        margin-right: 1rem
+        transform: translateY(0.5rem)
+
+@media screen and (min-width: 48.5em)
+  .b-tariff-table-control .control-item
+    margin-bottom: 1rem
+
+@media screen and (min-width: 30em)
+  .b-tariff-table-control .control-item.is-type-card
+    margin-right: 1rem
+    width: calc(50% - 1rem)
+
+@media screen and (min-width: 48.5em)
+  .b-tariff-table-control .control-item.is-type-card
+    width: 28rem
+
+@media screen and (min-width: 30em)
+  .b-tariff-table-control .control-item.is-currency
+    margin-left: 1rem
+    width: calc(50% - 4rem)
+
+@media screen and (min-width: 48.5em)
+  .b-tariff-table-control .control-item.is-currency
+    width: 25rem
+
+.b-select
+  .toggler
+    padding: 1rem 2rem
+    border: 1px solid $clr-12
+    border-radius: 3px
+    background: #fff
+  .search-panel
+    padding: 2rem
+    background: #fff
+    .select-control
+      z-index: auto
+      position: static
+  .search-panel-icon
+    width: 2.5rem
+    height: 2.5rem
+    margin-right: 1rem
+    margin-bottom: 0.5rem
+  .search-panel-input
+    -webkit-box-flex: 1
+    -ms-flex: 1
+    flex: 1
+    border: none
+    outline: none
+    font-weight: 500
+    width: auto
+  .select-icon
+    height: 2rem
+    width: 2rem
+    svg
+      fill: $clr-4
+  .select-dropdown
+    position: absolute
+    z-index: -100
+    width: 100%
+    border-bottom-left-radius: 3px
+    border-bottom-right-radius: 3px
+    .list-select
+      position: static
+      border: none
+      border-radius: 0
+  .select-control
+    z-index: -10
+    position: absolute
+    width: 0
+    overflow: hidden
+  .list-select
+    z-index: 5
+    background: #fff
+    border: 1px solid $clr-12
+    border-top: none
+    border-radius: 0 0 3px 3px
+    max-height: 28rem
+    overflow: auto
+    outline: none
+  .list-select-item
+    padding: 1rem 2rem
+    cursor: pointer
+    list-style: none
+    &:hover
+      background: $clr-8
+    &.selected
+      display: none !important
+    &.focused
+      background: $clr-8
+  &.open
+    .toggler
+      border-radius: 3px 3px 0 0
+    .search-panel
+      display: -webkit-box
+      display: -ms-flexbox
+      display: flex
+      width: auto
+    .select-dropdown
+      border: 1px solid $clr-12
+      border-top: none
+      z-index: 5
+  &.is-without-border .toggler
+    border: 0
+  &.is-disabled
+    color: $clr-5
+    .toggler .select-icon svg
+      fill: $clr-5
+
+.b-merchant-tariffs
+  .merchant-tariffs-item:first-of-type
+    margin-bottom: 5rem
+  .merchant-img
+    margin-bottom: 2rem
+    img
+      box-shadow: 0 7px 14px $rgba-3, 0 3px 6px rgba(26, 26, 26, 0.08)
+      width: 100%
+  .merchant-tariffs-tariff p
+    padding-bottom: 1rem
+  .merchant-how-it-work ol li
+    padding: 1rem 0
+
+@media screen and (min-width: 64em)
+  .b-merchant-tariffs .merchant-tariffs-item:first-of-type
+    margin-bottom: 0
+
+@media screen and (min-width: 48.5em)
+  .b-merchant-tariffs .merchant-img
+    margin-bottom: 7rem
+    margin-top: 2rem
+
+@media screen and (min-width: 48.5em)
+  .b-merchant-tariffs .merchant-img img
+    width: 100%
+
+@media screen and (min-width: 48.5em)
+  .b-merchant-tariffs .merchant-how-it-work
+    margin-left: 10%
+
+.b-card-blocking .card-blocking-item
+  .card-blocking-item-content
+    height: 100%
+    display: block
+  &:last-of-type .card-blocking-item-content
+    border: 0
+  .card-blocking-item-icon
+    -ms-flex-item-align: center
+    align-self: center
+    width: 4rem
+  .card-blocking-info-app .card-blocking-info-app-item
+    width: 14.5rem
+
+@media screen and (min-width: 30em)
+  .b-card-blocking .card-blocking-item .card-blocking-item-content
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    margin-bottom: 4rem
+    border-bottom: 1px solid $clr-12
+
+@media screen and (min-width: 64em)
+  .b-card-blocking .card-blocking-item .card-blocking-item-content
+    border-right: 1px solid $clr-12
+    border-bottom: 0
+    margin-bottom: 0
+    display: block
+
+.b-card-icon .item
+  width: 5.25rem
+  margin-right: 1rem
+  &:last-of-type
+    width: 7rem
+  img
+    width: 100%
+
+.b-payment-options
+  margin: 3rem 0
+  .payment-options-tile-item
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    margin-top: 1.75rem
+    margin-bottom: 2.25rem
+    .payment-options-tile-item-icon
+      width: 6rem
+    .payment-options-tile-item-info
+      margin-left: 2rem
+      .item-info-name
+        font-weight: 600
+      .item-info-commission
+        font-size: 1.75rem
+        color: $clr-4
+
+.b-payout-without-wallet
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-pack: end
+  -ms-flex-pack: end
+  justify-content: flex-end
+  background: url(/images/app/mockup_iphone.png)
+  padding-bottom: 30rem
+  background-repeat: no-repeat
+  background-position: bottom
+  .payout-without-wallet-example-msg-wrap
+    max-width: 45rem
+
+.b-example-msg
+  border-radius: 1rem
+  .example-msg-filter-wrapper
+    border-radius: 1rem
+    background: #fff
+  .example-msg-header
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    height: 4rem
+    background: $clr-9
+    border-radius: 1rem 1rem 0 0
+    padding: 0 2rem
+    -webkit-box-pack: justify
+    -ms-flex-pack: justify
+    justify-content: space-between
+    -ms-flex-line-pack: center
+    align-content: center
+    font-size: 1.6rem
+    color: $clr-4
+    .msg-header-title
+      display: -webkit-box
+      display: -ms-flexbox
+      display: flex
+      -webkit-box-align: center
+      -ms-flex-align: center
+      align-items: center
+      .header-title-icon
+        width: 2.5rem
+        height: 2.5rem
+        margin-right: 0.5rem
+      .header-title-text
+        display: inline-block
+        text-transform: uppercase
+    .msg-header-time
+      -ms-flex-item-align: center
+      align-self: center
+  .example-msg-content
+    position: relative
+    padding: 2rem
+    border-radius: 0 0 1rem 1rem
+    font-size: 1.75rem
+    line-height: 2.5rem
+  &.is-push
+    .example-msg-header
+      height: 5rem
+      background-color: transparent
+    .example-msg-content
+      padding-top: 0
+      padding-bottom: 1rem
+
+@supports (-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())
+  .b-example-msg .example-msg-filter-wrapper
+    background: $hsla-6
+    -webkit-backdrop-filter: blur(16px)
+    backdrop-filter: blur(16px)
+
+.b-start-work-epa
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  -webkit-box-pack: justify
+  -ms-flex-pack: justify
+  justify-content: space-between
+  -ms-flex-line-pack: start
+  align-content: flex-start
+  margin-left: -2rem
+  max-width: 90rem
+  .start-work-epa-field
+    position: relative
+    margin-left: 2rem
+    width: 100%
+    .start-work-epa-field-api-error
+      display: none
+      color: $clr-red-2
+      padding-top: .5rem
+      font-size: 1.75rem
+    &.is-input
+      padding-bottom: 2rem
+    &.is-button
+      padding-bottom: 1rem
+      .spinner-load
+        display: none
+        margin-left: 1rem
+        width: 3rem
+        height: 3rem
+        &.loading
+          display: block
+          svg
+            animation: a 1s infinite
+    .start-work-epa-field-conditions
+      display: block
+      margin-top: .5rem
+      opacity: 0
+      height: 0
+      overflow: hidden
+      &:hover
+        opacity: 1
+        height: auto
+        line-height: 2rem
+        font-size: 1.75rem
+        margin-bottom: -.56249rem
+        padding-top: 0.56251rem
+    &.is-input input:focus ~ .start-work-epa-field-conditions
+      opacity: 1
+      height: auto
+      transition: opacity 1s ease-out
+      line-height: 2.25rem
+      font-size: 1.75rem
+      margin-bottom: -.68749rem
+      padding-top: 0.68751rem
+  &.has-error .start-work-epa-field .start-work-epa-field-api-error
+    display: block
+
+@media screen and (min-width: 48.5em)
+  .b-start-work-epa .start-work-epa-field
+    &.is-input
+      width: calc(50% - 2rem)
+      padding-bottom: 1rem
+    &.is-button
+      width: calc(50% - 2rem)
+
+@media screen and (min-width: 64em)
+  .b-start-work-epa .start-work-epa-field
+    &.is-input
+      width: calc(60% - 2rem)
+      padding-bottom: 1rem
+    &.is-button
+      width: calc(40% - 2rem)
+
+@keyframes a
+  0%
+    transform: rotate(0deg)
+  to
+    transform: rotate(1turn)
+
+.b-card-panel
+  position: relative
+  padding: 1rem 2rem 1rem 5rem
+  display: block
+  .card-panel-icon
+    position: absolute
+    top: 2rem
+    left: 0
+    width: 3rem
+    height: 3rem
+  p
+    color: $clr-4
+  &.has-char-icon
+    padding: 1rem 0 0 3rem
+    .card-panel-icon
+      top: 3rem
+      width: auto
+      height: auto
+      &.is-bullet
+        font-size: 4rem
+      &.is-heading
+        top: 1rem
+    &.on-top
+      padding: 5rem 0 1rem
+      .card-panel-icon
+        right: 0
+
+@media screen and (min-width: 30em)
+  .b-card-panel
+    padding: 1rem 2rem 1rem 5rem
+    &.has-char-icon
+      padding-left: 3rem
+      &.on-left-sm
+        padding: 1rem 0 1rem 3rem
+
+@media screen and (min-width: 48.5em)
+  .b-card-panel .card-panel-icon
+    top: 2.5rem
+
+.b-mobile-notification
+  margin-left: -2.5rem
+  margin-right: -2.5rem
+  .mobile-notification-bg
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-pack: center
+    -ms-flex-pack: center
+    justify-content: center
+    background-image: url(/images/mobile-notification/mobile-6ea50d9149.jpg)
+    background-repeat: no-repeat
+    background-position: bottom
+    background-size: 489px
+  .mobile-notification-msg
+    margin: 4rem 2.5rem 27rem
+    width: 100%
+    max-width: 45rem
+
+@media only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)
+  .b-mobile-notification .mobile-notification-bg
+    background-image: url(/images/mobile-notification/mobile@2x-848e02a83e.jpg)
+
+@media only screen and (-moz-min-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3), only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min-device-pixel-ratio: 3)
+  .b-mobile-notification .mobile-notification-bg
+    background-image: url(/images/mobile-notification/mobile@3x-f22185b7d4.jpg)
+
+@media screen and (min-width: 30em)
+  .b-mobile-notification
+    margin-left: -4rem
+    margin-right: -4rem
+    .mobile-notification-msg
+      margin-right: 4rem
+      margin-left: 4rem
+
+@media screen and (min-width: 48.5em)
+  .b-mobile-notification
+    margin-left: -4rem
+    margin-right: -4rem
+    .mobile-notification-bg
+      -webkit-box-pack: end
+      -ms-flex-pack: end
+      justify-content: flex-end
+      background-position: 100% 100%
+    .mobile-notification-msg
+      margin-right: 4rem
+      margin-left: 4rem
+
+@media screen and (min-width: 64em)
+  .b-mobile-notification
+    margin-left: 0
+    margin-right: -4rem
+    .mobile-notification-bg
+      -webkit-box-pack: start
+      -ms-flex-pack: start
+      justify-content: flex-start
+      background-position: 0 100%
+    .mobile-notification-msg
+      margin-right: 4rem
+      margin-left: 0
+
+.b-panel-tabs
+  .panel-tabs-item
+    position: relative
+    padding: 2rem 4rem 3rem
+    border-radius: .5rem
+    cursor: pointer
+    .info, .title
+      color: $clr-4
+      transition: color 0.3s
+    &:hover
+      .info, .title
+        color: $clr-1
+    &.active
+      background: $clr-8
+      cursor: auto
+      .info, .title
+        color: $clr-1
+  &.is-dark .panel-tabs-item
+    background: $clr-1
+    .info, .title
+      color: $clr-5
+    &.active
+      background: $clr-3
+      .title
+        color: #fff
+      .info
+        color: $clr-12
+    &:hover
+      .info, .title
+        color: #fff
+  &.is-white .panel-tabs-item
+    border: 1px solid $clr-12
+    background: #fff
+    .info, .title
+      color: $clr-4
+    &.active
+      background: #fff
+      .title
+        color: $clr-1
+    &:hover .title
+      color: $clr-1
+
+.b-partners
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  -webkit-box-pack: justify
+  -ms-flex-pack: justify
+  justify-content: space-between
+  .partners-item
+    line-height: 0
+    padding: 1rem
+    -webkit-box-flex: 0
+    -ms-flex: 0 0 16rem
+    flex: 0 0 16rem
+    max-width: 16rem
+    &.is-empty
+      padding: 0
+    &.is-hover-grey
+      svg
+        transition: fill 0.3s
+      &:hover svg
+        fill: $clr-4
+    &.has-opacity-50
+      opacity: .5
+      transition: opacity 0.3s
+      &:hover
+        opacity: 1
+
+@media screen and (min-width: 64em)
+  .b-partners .partners-item
+    -webkit-box-flex: 0
+    -ms-flex: 0 0 22rem
+    flex: 0 0 22rem
+    max-width: 22rem
+
+.b-mockup-mobile
+  width: 35rem
+  background: url(/images/mobile-mockup/border-8704871d6c.png)
+  background-size: 100%
+  background-repeat: no-repeat
+  .mockup-mobile-animation
+    height: 67rem
+    width: 100%
+    img, video
+      display: none
+      width: 100%
+      padding: 0 4rem 0 4.1rem
+      margin-top: 9.5rem
+    .active
+      img, video
+        display: inline-block
+  .mockup-mobile-icon
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-pack: center
+    -ms-flex-pack: center
+    justify-content: center
+    height: 4rem
+    margin-top: 4rem
+    padding-left: 1.75rem
+  .mockup-mobile-icon-item svg
+    fill: $clr-5
+  .mockup-mobile-icon-apple
+    margin-right: 1.5rem
+    width: 100px
+  .mockup-mobile-icon-android
+    margin-left: 1.5rem
+    width: 114px
+
+@media only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)
+  .b-mockup-mobile
+    background-image: url(/images/mobile-mockup/border@2x-c8c1f992ed.png)
+
+@media only screen and (-moz-min-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3), only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min-device-pixel-ratio: 3)
+  .b-mockup-mobile
+    background-image: url(/images/mobile-mockup/border@3x-8bc00257a5.png)
+
+.b-calculator
+  .calculator-el-label
+    font-size: 1.75rem
+    color: $clr-4
+    margin-bottom: 1rem
+  .calculator-controls .calculator-controls-item
+    margin-bottom: 4rem
+    .controls-item-select
+      font-weight: 600
+    .controls-item-select-title
+      padding: 1rem 0
+      -webkit-box-flex: 1
+      -ms-flex-positive: 1
+      flex-grow: 1
+      img
+        margin: 0 1rem
+        vertical-align: middle
+    .controls-item-select-list-select li
+      padding-top: 2rem
+      padding-bottom: 2rem
+      img
+        margin: 0 1rem
+        vertical-align: middle
+    .controls-item-select.is-currency .controls-item-select-list-select .list-select-item
+      padding-right: 3.5rem
+    .group-control-inline
+      display: -webkit-box
+      display: -ms-flexbox
+      display: flex
+      .controls-item-input
+        -ms-flex-preferred-size: 100%
+        flex-basis: 100%
+        input
+          font-size: 2.5rem
+          color: $clr-1
+          font-weight: 600
+          border-radius: 3px 0 0 3px
+          border-right: none
+      .controls-item-select
+        -ms-flex-preferred-size: 22rem
+        flex-basis: 22rem
+        .toggler
+          height: 7rem
+          border-radius: 0 3px 3px 0
+        &.is-currency
+          .controls-item-select-list-select, .controls-item-select-title
+            text-align: center
+  .calculator-block-separator
+    width: 100%
+    height: 1px
+    background: $clr-12
+    margin-bottom: 7rem
+  .calculator-res
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -ms-flex-direction: column
+    flex-direction: column
+    -webkit-box-pack: start
+    -ms-flex-pack: start
+    justify-content: flex-start
+    height: 100%
+    .calculator-res-row
+      display: -webkit-box
+      display: -ms-flexbox
+      display: flex
+      -ms-flex-wrap: wrap
+      flex-wrap: wrap
+      -ms-flex-line-pack: start
+      align-content: flex-start
+      .is-half-row
+        -ms-flex-preferred-size: calc(50% - 4.5rem)
+        flex-basis: calc(50% - 4.5rem)
+      &:last-of-type
+        margin-top: auto
+    .calculator-res-info
+      font-size: 3rem
+      -ms-flex-preferred-size: 100%
+      flex-basis: 100%
+      .calculator-res-info-text
+        font-weight: 600
+        padding-top: 0.25rem
+      .calculator-res-info-text-fee
+        font-size: 8rem
+        line-height: 8rem
+      .calculator-res-info-text-amount-line
+        font-weight: 500
+        font-size: 2rem
+        padding-top: 1rem
+      &.is-half-col
+        -ms-flex-preferred-size: 100%
+        flex-basis: 100%
+        + .is-half-col
+          margin-top: 2.5rem
+    .calculator-res-shipping
+      -ms-flex-preferred-size: 100%
+      flex-basis: 100%
+      margin-top: 3rem
+      padding: 1rem 2rem 1.75rem
+      position: relative
+      border-radius: .5rem
+      background: $clr-11
+      display: none
+      .calculator-res-shipping-header
+        display: -webkit-box
+        display: -ms-flexbox
+        display: flex
+        -webkit-box-orient: vertical
+        -webkit-box-direction: reverse
+        -ms-flex-direction: column-reverse
+        flex-direction: column-reverse
+        -webkit-box-align: start
+        -ms-flex-align: start
+        align-items: flex-start
+      .calculator-res-shipping-header-mark
+        margin-bottom: 1.5rem
+      .calculator-res-shipping-info
+        font-size: 1.75rem
+        margin-top: 1rem
+      .calculator-res-shipping-info-type
+        color: $clr-2
+      .calculator-res-shipping
+        &.is-error, &.is-warning
+          background: $clr-red-3
+          margin-top: 7rem
+        &.is-error .error-title, &.is-warning .error-title
+          font-weight: 600
+          padding-top: 1rem
+        &.is-error .error-info, &.is-warning .error-info
+          padding-top: 1rem
+          font-size: 1.75rem
+          padding-bottom: 1rem
+      &.is-error
+        background: $clr-red-3
+      &.is-warning
+        background: #fff
+        padding-bottom: 3rem
+        &:before
+          content: url(/images/epayments-card/timer-04675cc101.svg)
+          display: block
+          width: 4rem
+          height: 4rem
+          margin: 2rem 0 1rem
+    .calculator-res-footnote
+      -ms-flex-preferred-size: 100%
+      flex-basis: 100%
+      font-size: 1.75rem
+      line-height: 1.5
+      margin-top: 3rem
+
+@media screen and (min-width: 48.5em)
+  .b-calculator .calculator-block-separator
+    width: 1px
+    height: 100%
+    background: $clr-12
+    margin: 0 auto
+
+@media screen and (min-width: 30em)
+  .b-calculator .calculator-res .calculator-res-info.is-half-col
+    -ms-flex-preferred-size: calc(50% - 4.5rem)
+    flex-basis: calc(50% - 4.5rem)
+    + .is-half-col
+      margin-top: 0
+
+@media screen and (min-width: 30em)
+  .b-calculator .calculator-res .calculator-res-shipping
+    padding: 1rem 4rem 1.75rem
+
+@media screen and (min-width: 48.5em)
+  .b-calculator .calculator-res .calculator-res-shipping
+    -ms-flex-preferred-size: 79%
+    flex-basis: 79%
+
+@media screen and (min-width: 30em)
+  .b-calculator .calculator-res .calculator-res-shipping
+    .calculator-res-shipping-header
+      -webkit-box-orient: horizontal
+      -webkit-box-direction: normal
+      -ms-flex-direction: row
+      flex-direction: row
+      -webkit-box-align: center
+      -ms-flex-align: center
+      align-items: center
+      -webkit-box-pack: justify
+      -ms-flex-pack: justify
+      justify-content: space-between
+    .calculator-res-shipping-header-mark
+      margin-bottom: 0
+
+@media screen and (min-width: 48.5em)
+  .b-calculator .calculator-res .calculator-res-footnote
+    -ms-flex-preferred-size: 90%
+    flex-basis: 90%
+
+.b-range
+  .range-input
+    position: relative
+    margin-top: 1rem
+    padding-bottom: 4rem
+  .range-input-track
+    position: relative
+    width: 100%
+    height: 1rem
+    background: #fff
+    border-radius: 1rem
+    overflow: hidden
+  .range-input-track-progress
+    position: absolute
+    top: 0
+    left: -200%
+    height: 100%
+    width: 200%
+    background: $clr-red-2
+  .range-input-thumb
+    position: absolute
+    width: 3rem
+    height: 3rem
+    left: 0
+    cursor: pointer
+    top: -1rem
+    background: #fff
+    border-radius: 50%
+    box-shadow: 0 0.25rem 1rem 0 rgba(26, 26, 26, 0.26)
+
+.b-feedback
+  border: 1px solid $clr-12
+  padding: 2rem 3rem
+  background: #fff
+  border-radius: 0.5rem
+  .feedback-stars
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    .feedback-star
+      width: 2.5rem
+      margin-right: 0.25rem
+  .feedback-comment
+    margin-top: 1.5rem
+  .feedback-author
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    font-size: 1.75rem
+    color: $clr-3
+    padding-top: 2rem
+    .feedback-author-avatar
+      margin-right: 1rem
+      border-radius: 50%
+
+.b-history-cooperation
+  border: 1px solid $clr-12
+  border-radius: .5rem
+  background-color: #fff
+  padding: 3rem
+  box-shadow: 0 0 0 0 $rgba-3
+  transition: box-shadow
+  .history-cooperation-logo
+    width: 22rem
+    margin: 0 auto
+    text-align: center
+  .history-cooperation-main-info
+    font-weight: 600
+    margin: 2rem auto
+  .history-cooperation-sub-info
+    color: $clr-4
+  &.is-active
+    cursor: pointer
+    &:hover
+      box-shadow: 0 1rem 3rem 0 $rgba-3
+
+@media screen and (min-width: 64em)
+  .b-history-cooperation.is-next
+    cursor: pointer
+    &:hover
+      box-shadow: 0 1rem 3rem 0 $rgba-3
+
+.b-mark
+  display: inline-block
+  float: right
+  background: $clr-blue-3
+  color: #fff
+  font-size: 1.125rem
+  line-height: 1
+  text-transform: uppercase
+  right: 4rem
+  top: 3rem
+  padding: 1rem 1.75rem
+  border-radius: .5rem
+  letter-spacing: .1rem
+  font-weight: 600
+  &.is-white
+    background: #fff
+    color: $clr-1
+  &.is-red
+    background: $clr-red-2
+    color: #fff
+  &.is-green
+    background: $clr-green-1
+    color: #fff
+  &.is-x2
+    font-size: 1.5rem
+    letter-spacing: .8px
+    border-radius: .375rem
+    padding: 1.25rem 2.1rem
+
+.b-map
+  position: relative
+  .map-bg
+    padding: 1rem 0
+    background-image: url(/images/index/map/map-af84614f4c.svg)
+    background-repeat: no-repeat
+    background-position: top
+    background-size: auto 100%
+    min-height: 38rem
+    height: 100%
+  .map-markers
+    position: relative
+    padding-top: 50%
+    .map-marker
+      position: absolute
+  .map-info
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    padding-top: 3rem
+  .map-info-item
+    display: block
+    list-style: none
+    -webkit-box-flex: 0
+    -ms-flex: 0 0 100%
+    flex: 0 0 100%
+    padding-top: 3rem
+  .map-info-item-title
+    line-height: 5rem
+    font-size: 4rem
+    margin-bottom: -.15999rem
+    padding-top: 1.16001rem
+
+@media screen and (min-width: 30em)
+  .b-map
+    .map-bg
+      min-height: 40rem
+      padding: 3rem 0
+    .map-info
+      -ms-flex-wrap: nowrap
+      flex-wrap: nowrap
+      padding-top: 5rem
+    .map-info-item
+      padding-top: 0
+      -webkit-box-flex: 0
+      -ms-flex: 0 0 33.33333%
+      flex: 0 0 33.33333%
+
+@media screen and (min-width: 48.5em)
+  .b-map
+    .map-bg
+      padding: 0
+      background-size: 100% auto
+      min-height: 53rem
+    .map-info
+      padding-top: 7rem
+    .map-info-item-title
+      line-height: 5rem
+      font-size: 5rem
+      margin-bottom: .17501rem
+      padding-top: 0.82501rem
+
+@media screen and (min-width: 64em)
+  .b-map
+    .map-container
+      padding: 0 5rem
+    .map-info-item-title
+      line-height: 5rem
+      font-size: 6rem
+      margin-bottom: .51001rem
+      padding-top: 0.49001rem
+
+.b-card-feedback
+  position: relative
+  width: 46rem
+  padding: 0
+  z-index: 0
+  background: transparent
+  border-radius: .5rem
+  height: 0
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  .card-feedback-icon
+    position: absolute
+    left: 3rem
+    top: 3rem
+    line-height: 1
+    box-shadow: 0 0.25rem 0.5rem 0 $rgba-3, 0 1rem 2rem 0 $rgba-3
+    cursor: pointer
+    border-radius: 50%
+    z-index: 1
+    width: 4rem
+    height: 4rem
+    transition: transform 0.2s cubic-bezier(0, 0, 0.2, 1), height 0.2s cubic-bezier(0, 0, 0.2, 1)
+    img
+      width: 100%
+      border-radius: 50%
+  .card-feedback-balloon
+    opacity: 0
+    z-index: -1
+  .card-feedback-balloon-title
+    display: none
+    padding-left: 6rem
+  .card-feedback-balloon-title-name
+    line-height: 2rem
+    font-size: 2rem
+    margin-bottom: -.32999rem
+    padding-top: .33001rem
+    font-weight: 600
+  .card-feedback-balloon-title-details
+    line-height: 3rem
+    font-size: 1.75rem
+    margin-bottom: -.05374rem
+    padding-top: 1.05376rem
+    color: $clr-4
+  .card-feedback-balloon-msg
+    display: none
+    margin-top: 1.5rem
+  &.is-marker
+    transform: translate(-3rem, -3rem)
+  &.is-right
+    .card-feedback-icon
+      left: auto
+      right: 3rem
+    .card-feedback-balloon-title
+      padding-left: 0
+      padding-right: 7rem
+  &.is-marker.is-right
+    transform: translate(3rem, -3rem)
+  &.active, &.is-static
+    padding: 3rem
+    background: #fff
+    height: auto
+    z-index: 1
+    width: 100%
+    border: 1px solid $clr-12
+  &.active .card-feedback-icon, &.is-static .card-feedback-icon
+    -webkit-box-shadow: none
+    box-shadow: none
+    transform: scale(1.25)
+  &.active .card-feedback-balloon, &.is-static .card-feedback-balloon
+    opacity: 1
+    z-index: 1
+    transition: opacity 0.4s cubic-bezier(0, 0, 0.2, 1)
+  &.active
+    .card-feedback-balloon-msg, .card-feedback-balloon-title
+      display: block
+  &.is-static
+    .card-feedback-balloon-msg, .card-feedback-balloon-title
+      display: block
+  &:after
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    display: block
+    width: 100%
+    height: 100%
+    box-shadow: 0 1rem 2rem $rgba-3
+    opacity: 0
+    z-index: -1
+    transition: opacity 0.35s cubic-bezier(0, 0, 0.2, 1) 50ms
+  &:hover
+    will-change: opacity, background
+    &:after
+      will-change: opacity
+  &.active, &.is-active
+    transition: background 0.4s cubic-bezier(0, 0, 0.2, 1)
+  &.active:after, &.is-active:after
+    opacity: 1
+
+@media screen and (min-width: 48.5em)
+  .b-card-feedback .card-feedback-balloon-title
+    padding-left: 7rem
+
+@media screen and (min-width: 48.5em)
+  .b-card-feedback
+    &.active, &.is-static
+      width: 46rem
+
+.b-carousel-slider
+  overflow: hidden
+  position: relative
+  .carousel-slider-wrapper
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -ms-flex-wrap: nowrap
+    flex-wrap: nowrap
+    padding-top: 5rem
+    padding-bottom: 3rem
+    width: 100%
+    overflow: visible
+    &:hover
+      will-change: transform
+      .carousel-slider-item
+        will-change: opacity
+  .carousel-slider-item
+    -webkit-box-flex: 0
+    -ms-flex: 0 0 auto
+    flex: 0 0 auto
+    width: calc(100% - 5rem)
+    opacity: .56
+    transition: all 0.2s
+    &.is-active
+      opacity: 1
+  .carousel-slider-controls
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    position: absolute
+    top: 50%
+    transform: translateY(-3rem)
+    -webkit-box-pack: justify
+    -ms-flex-pack: justify
+    justify-content: space-between
+    padding: 0 4rem
+    width: 100%
+    height: 0
+  .carousel-slider-control.is-disabled
+    visibility: hidden
+  &[data-module=history-cooperation-slider] .carousel-slider-item, &[data-module=carousel-slider] .carousel-slider-item, &[data-module=our-team-slider] .carousel-slider-item, &[data-module=years-slider] .carousel-slider-item
+    margin-right: 1rem
+
+@media screen and (min-width: 30em)
+  .b-carousel-slider .carousel-slider-item
+    width: calc(100% - 8rem)
+
+@media screen and (min-width: 48.5em)
+  .b-carousel-slider .carousel-slider-item
+    width: calc(100% - 8rem)
+    max-width: 88rem
+
+@media screen and (min-width: 64em)
+  .b-carousel-slider .carousel-slider-item
+    width: calc(100% - 8rem)
+    max-width: 63rem
+    &.is-next
+      opacity: 1
+
+@media screen and (min-width: 80em)
+  .b-carousel-slider .carousel-slider-controls
+    padding: 0 6rem
+
+@media screen and (min-width: 64em)
+  .b-carousel-slider[data-module=history-cooperation-slider] .carousel-slider-item
+    margin-right: 4rem
+
+.b-epa-card
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  -webkit-box-orient: vertical
+  -webkit-box-direction: normal
+  -ms-flex-direction: column
+  flex-direction: column
+  height: 100%
+  -webkit-box-pack: end
+  -ms-flex-pack: end
+  justify-content: flex-end
+  position: relative
+  z-index: -1
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  .epa-card-card
+    width: 35rem
+    transition: top .2s ease-out
+    z-index: 2
+    img
+      width: 100%
+  .epa-card-phone
+    margin-left: auto
+    margin-right: auto
+    overflow: hidden
+    padding-bottom: 6rem
+    margin-bottom: -30rem
+    z-index: -1
+    img
+      width: 100%
+      max-width: 100%
+
+@media screen and (min-width: 30em)
+  .b-epa-card
+    -webkit-box-align: start
+    -ms-flex-align: start
+    align-items: flex-start
+
+@media screen and (min-width: 64em)
+  .b-epa-card .epa-card-card
+    padding-bottom: 20rem
+
+@media screen and (min-width: 48.5em)
+  .b-epa-card .epa-card-phone
+    margin-left: 25%
+    z-index: 1
+    margin-bottom: 0
+
+@media screen and (min-width: 30em)
+  .b-epa-card .epa-card-phone img
+    width: 160%
+    max-width: 35rem
+
+@media screen and (min-width: 48.5em)
+  .b-epa-card .epa-card-phone img
+    transform: translateY(calc(15vw + 6rem))
+
+@media screen and (min-width: 64em)
+  .b-epa-card .epa-card-phone img
+    width: 100%
+    max-width: 100%
+    transform: translateY(calc(4vw + 6rem))
+
+.b-animated-card
+  transform: translate(0)
+  width: 36rem
+  .animated-card-wrapper
+    transform-style: preserve-3d
+  img
+    display: block
+    max-width: 100%
+    -webkit-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+  .animated-card-container
+    position: relative
+    transform: translateX(0) translateY(0)
+    transition: all 0.2s ease-out
+  .animated-card-shadow, .animated-card-shine
+    position: absolute
+  .animated-card-image
+    border-radius: 1rem
+    width: 100%
+    height: 100%
+  .animated-card-shine
+    border-radius: 1rem
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+  .animated-card-shadow
+    top: 2.5%
+    left: 2.5%
+    width: 95%
+    height: 95%
+    box-shadow: 0 1rem 3rem $rgba-8
+  .animated-card-image
+    transform-style: preserve-3d
+  .animated-card-shine
+    background: linear-gradient(135deg, $hsla-4, $hsla-1 60%)
+    transform: translateX(0) translateY(0)
+  &.is-hover .animated-card-shadow
+    box-shadow: 0 2rem 4rem $rgba-7
+  .animated-card-container
+    margin: 0.5rem
+
+@media screen and (min-width: 48.5em)
+  .b-animated-card
+    width: 37rem
+    .animated-card-container
+      margin: 1rem
+
+@media screen and (min-width: 64em)
+  .b-animated-card
+    width: 39rem
+    .animated-card-container
+      margin: 2rem
+
+.b-switch
+  position: relative
+  background-color: $clr-11
+  color: $clr-1
+  border: 1px solid $clr-11
+  border-radius: 5px
+  .switch-list
+    position: relative
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    z-index: 2
+  .switch-item
+    line-height: 3rem
+    font-size: 2.25rem
+    padding: .93751rem 3rem 1.06251rem
+    border-width: 0
+    border-style: solid
+    -webkit-box-flex: 1
+    -ms-flex: 1 1 100%
+    flex: 1 1 100%
+    border-radius: 5px
+    font-weight: 600
+    text-align: center
+    cursor: pointer
+  .switch-slider
+    position: absolute
+    top: 0
+    height: 100%
+    background-color: #fff
+    transition: all .2s
+    z-index: 1
+    border-radius: 5px
+
+.b-collapsible-table
+  .collapsible-table-header, .collapsible-table-row
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    background-color: $clr-9
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+  .collapsible-table-header
+    margin-top: 2rem
+  .collapsible-table-row
+    border-radius: 5px
+    &:hover
+      background-color: #fff
+  .collapsible-table-cell
+    display: none
+    -webkit-box-flex: 1
+    -ms-flex: 1 1 100%
+    flex: 1 1 100%
+    padding-top: .5rem
+    padding-bottom: 0.5rem
+    &:first-child
+      padding-top: 1.5rem
+    &:not(:first-child)
+      padding-bottom: 1.5rem
+    &.is-show
+      display: block
+  .collapsible-table-body .collapsible-table-cell
+    &:first-child
+      color: $clr-4
+    &:not(:first-child)
+      font-weight: 600
+  .collapsible-table-header .collapsible-table-cell
+    text-align: left
+    .collapsible-table-icon
+      display: none
+  .collapsible-table-icon-wrap
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-pack: end
+    -ms-flex-pack: end
+    justify-content: flex-end
+  .collapsible-table-icon
+    width: 3rem
+    height: 3rem
+    display: none
+  .collapsible-table-heading
+    line-height: 4rem
+    font-size: 2.25rem
+    margin-bottom: .75376rem
+    padding-top: 1.24626rem
+    font-weight: 600
+  .collapsible-table-tabs-wrap
+    margin-top: 2rem
+    max-width: 43rem
+  .collapsible-table-row .collapsible-table-cell:first-child
+    display: block
+  .collapsible-table-cell
+    padding-right: 1rem
+    padding-left: 1rem
+  &.with-gutter
+    .collapsible-table-body, .collapsible-table-header
+      margin-right: -1rem
+      margin-left: -1rem
+  &.with-hr .collapsible-table-body:before
+    display: block
+    margin-bottom: 2rem
+    height: 1px
+    background: $clr-12
+
+@media screen and (min-width: 64em)
+  .b-collapsible-table .collapsible-table-header
+    margin-top: 1rem
+
+@media screen and (min-width: 30em)
+  .b-collapsible-table
+    .collapsible-table-header, .collapsible-table-row
+      -ms-flex-wrap: nowrap
+      flex-wrap: nowrap
+    .collapsible-table-body .collapsible-table-cell
+      padding-top: 1.5rem
+      padding-bottom: 1.5rem
+      &:first-child
+        text-align: left
+      &:not(:first-child)
+        text-align: right
+    .collapsible-table-icon
+      display: block
+    .collapsible-table-icon-alt
+      display: none
+
+@media screen and (min-width: 64em)
+  .b-collapsible-table
+    .collapsible-table-header
+      margin-top: 0
+      .collapsible-table-cell
+        text-align: right
+    .collapsible-table-cell, .collapsible-table-header .collapsible-table-cell .collapsible-table-icon
+      display: block
+    .collapsible-table-tabs-wrap
+      display: none
+    .collapsible-table-body .collapsible-table-cell:not(:first-child)
+      font-weight: 500
+
+@media screen and (min-width: 64em)
+  .b-collapsible-table.with-hr .collapsible-table-body:before
+    content: ""
+
+@media screen and (min-width: 48.5em)
+  .b-collapsible-table
+    &.with-gutter
+      .collapsible-table-body, .collapsible-table-header
+        margin-right: -2rem
+        margin-left: -2rem
+    &.with-hr .collapsible-table-body:before
+      margin-right: 2rem
+      margin-left: 2rem
+    .collapsible-table-cell
+      padding-right: 2rem
+      padding-left: 2rem
+
+@media screen and (min-width: 64em)
+  .b-collapsible-table
+    &.with-gutter
+      .collapsible-table-body, .collapsible-table-header
+        margin-right: -4rem
+        margin-left: -4rem
+    &.with-hr .collapsible-table-body:before
+      margin-right: 4rem
+      margin-left: 4rem
+    .collapsible-table-cell
+      padding-right: 4rem
+      padding-left: 4rem
+
+.b-chat .chat-messages
+  display: none
+  min-height: 35rem
+  transition: opacity 0.5s cubic-bezier(0, 0, 0.2, 1)
+  &.active
+    display: block
+  .massage-row
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    height: 100%
+    opacity: 0
+    + .massage-row
+      margin-top: 3rem
+    &:last-of-type
+      margin-top: 1rem
+    &:first-of-type
+      animation: b .3s
+      animation-fill-mode: forwards
+    &:nth-of-type(2)
+      animation: c 4.2s
+      animation-delay: 1.3s
+      animation-fill-mode: forwards
+    &:nth-of-type(3)
+      animation: b .3s
+      animation-delay: 5.6s
+      animation-fill-mode: forwards
+  .massage-item
+    border-radius: .5rem
+    padding: 2rem
+    margin-left: auto
+    &.is-admin
+      background: #fff
+      color: $clr-1
+    &.is-user
+      background: $clr-blue-5
+      color: $clr-8
+    &.is-typing
+      background: $clr-blue-5
+      line-height: 1rem
+      span
+        display: inline-block
+        width: 1rem
+        height: 1rem
+        background: #fff
+        border-radius: 50%
+        &:first-of-type
+          animation: d 0.8s infinite
+        &:nth-of-type(2)
+          animation: e 0.8s infinite
+        &:nth-of-type(3)
+          animation: f 0.8s infinite
+        + span
+          margin-left: 0.125rem
+
+@keyframes b
+  0%
+    transform: scale(0.8)
+    opacity: 0
+  to
+    opacity: 1
+    transform: scale(1)
+
+@keyframes c
+  0%
+    transform: scale(0.8)
+    opacity: 0
+  5%, 99%
+    opacity: 1
+    transform: scale(1)
+  to
+    height: 0
+    overflow: hidden
+
+@keyframes d
+  0%, 35%
+    opacity: 1
+  20%
+    opacity: 0.5
+
+@keyframes e
+  30%, 65%
+    opacity: 1
+  50%
+    opacity: 0.5
+
+@keyframes f
+  55%, 90%
+    opacity: 1
+  75%
+    opacity: 0.5
+
+.b-vertical-carousel-slider
+  padding: 0 1rem
+  position: relative
+  overflow: hidden
+  &.has-h-60
+    height: 60rem
+  &.has-h-40
+    height: 40rem
+  .vertical-carousel-slider-wrapper
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -ms-flex-flow: column nowrap
+    flex-flow: column nowrap
+  .vertical-carousel-slider-item
+    margin: 1rem 0
+    transition: transform .2s
+    transform: scale(0.95)
+    z-index: 1
+    &:after
+      position: absolute
+      top: 2.5%
+      left: 2.5%
+      display: block
+      content: ""
+      width: 95%
+      height: 95%
+      box-shadow: 0 1rem 2rem $rgba-3
+      opacity: 0
+      transition: opacity .2s
+      z-index: -1
+    &.is-active, &.is-next
+      will-change: transform
+    &.is-active:after, &.is-next:after
+      will-change: opacity
+    &.is-active
+      transform: scale(1)
+      &:after
+        opacity: 1
+  .vertical-carousel-slider-mask
+    position: absolute
+    width: 100%
+    height: 33.33%
+    &.is-top
+      top: 0
+      background: linear-gradient(180deg, #fff, $hsla-1)
+    &.is-bottom
+      bottom: 0
+      background: linear-gradient(180deg, $hsla-1, #fff)
+
+@media screen and (min-width: 30em)
+  .b-vertical-carousel-slider
+    padding: 0 2rem
+    .vertical-carousel-slider-item:after
+      box-shadow: 0 2rem 3rem $rgba-3
+
+.b-index-mobile
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  height: 100%
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  justify-content: center
+  margin-top: 5rem
+  margin-bottom: -6rem
+  .index-mobile-container
+    height: 45rem
+    overflow: hidden
+
+@media screen and (min-width: 30em)
+  .b-index-mobile
+    overflow: hidden
+    margin-top: 0
+    margin-right: -4rem
+    margin-bottom: 0
+    -webkit-box-pack: start
+    -ms-flex-pack: start
+    justify-content: flex-start
+    .index-mobile-container
+      overflow: hidden
+      height: auto
+
+@media screen and (min-width: 48.5em)
+  .b-index-mobile
+    overflow: visible
+    margin-right: -4rem
+    margin-bottom: -12rem
+    -webkit-box-pack: center
+    -ms-flex-pack: center
+    justify-content: center
+    .index-mobile-container
+      margin-right: 0
+      height: 57rem
+      overflow: hidden
+
+@media screen and (min-width: 64em)
+  .b-index-mobile
+    margin-right: 0
+
+.b-mobile-rates
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  .mobile-rates-item
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-pack: justify
+    -ms-flex-pack: justify
+    justify-content: space-between
+    -webkit-box-flex: 0
+    -ms-flex: 0 0 100%
+    flex: 0 0 100%
+    padding: 1rem 3rem
+    background-color: $clr-blue-3
+    border-radius: 5px
+    + .mobile-rates-item
+      margin-top: 2rem
+  .mobile-rates-value
+    line-height: 3rem
+    font-size: 3rem
+    margin-bottom: .50501rem
+    padding-top: .49501rem
+    font-weight: 600
+    color: #fff
+  .mobile-rates-stars
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-pack: center
+    -ms-flex-pack: center
+    justify-content: center
+  .mobile-rates-stars-item
+    width: 1.75rem
+  .mobile-rates-link
+    display: block
+    line-height: 0
+    -ms-flex-item-align: center
+    align-self: center
+    width: 12rem
+    margin: 0 1rem
+    &.is-app-store .c-icon
+      margin-left: 0.5rem
+
+@media screen and (min-width: 30em)
+  .b-mobile-rates .mobile-rates-item
+    max-width: 35rem
+
+@media screen and (min-width: 48.5em)
+  .b-mobile-rates .mobile-rates-item
+    display: block
+    -webkit-box-flex: 0
+    -ms-flex: 0 1 auto
+    flex: 0 1 auto
+    padding: 3rem 4rem
+    text-align: center
+    + .mobile-rates-item
+      margin-top: 0
+      margin-left: 4rem
+
+.b-currency-pagination
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  justify-content: center
+  .pagination-item
+    width: 4rem
+    height: 4rem
+    border-radius: 50%
+    background: $clr-11
+    color: $clr-4
+    font-weight: 600
+    cursor: pointer
+    svg
+      fill: $clr-4
+    &.active
+      background: $clr-blue-3
+      color: #fff
+      svg
+        fill: #fff
+    + .pagination-item
+      margin-left: 1rem
+
+.b-switchable-content .switchable-content-item
+  display: none
+  &.active
+    display: block
+
+.b-index-partners
+  display: none
+  -webkit-box-pack: justify
+  -ms-flex-pack: justify
+  justify-content: space-between
+  .partners-item
+    -webkit-box-flex: 1
+    -ms-flex: 1 1 auto
+    flex: 1 1 auto
+    width: 100%
+    max-width: 12rem
+    svg
+      fill: $clr-5
+    &.is-title
+      display: none
+      color: $clr-5
+      font-weight: 600
+      -ms-flex-item-align: center
+      align-self: center
+    &:not(.is-title)
+      line-height: 0
+    &:last-child
+      display: none
+  &.active
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+
+@media screen and (min-width: 30em)
+  .b-index-partners .partners-item
+    max-width: 13rem
+    &:last-child
+      display: block
+
+@media screen and (min-width: 48.5em)
+  .b-index-partners .partners-item.is-title
+    display: block
+    max-width: 17rem
+
+@media screen and (min-width: 64em)
+  .b-index-partners .partners-item
+    max-width: 16rem
+
+.b-banner-slider
+  position: relative
+  width: 100%
+  overflow: hidden
+  height: calc(100vh - 6rem)
+  min-height: 74rem
+  .banner-slider-wrapper
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    transition-property: transform
+    width: 100%
+    height: 100%
+    will-change: transform
+  .banner-slider-item
+    -ms-flex-negative: 0
+    flex-shrink: 0
+    width: 100%
+    height: 100%
+    pointer-events: none
+    transition-property: opacity
+    background: $clr-3
+    &.is-active
+      pointer-events: auto
+  .banner-slider-item-content
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    height: 100%
+  .banner-slider-controls
+    position: absolute
+    width: 100%
+    bottom: 4vh
+  .banner-slider-control
+    cursor: pointer
+    width: 6rem
+    line-height: 0
+  .banner-slider-bullet
+    padding: 1rem 0
+  .banner-slider-caption
+    padding: 1rem 0
+    display: none
+    font-size: 1.75rem
+    &.is-active
+      display: block
+  .banner-slider-pagination
+    text-align: center
+  .banner-slider-bullet
+    display: inline-block
+    width: 2rem
+    text-align: center
+    cursor: pointer
+    + .banner-slider-bullet
+      margin-left: 3rem
+    &.is-active
+      color: transparent
+      position: relative
+      &:before
+        content: " "
+        width: 2rem
+        height: 2rem
+        position: absolute
+        top: calc(50% - 1rem)
+        left: calc(-50% + 1rem)
+        background: #fff
+        border-radius: 1rem
+  .banner-slider-bg-move
+    &.is-1 img
+      -o-object-position: 50% 0
+      object-position: 50% 0
+    &.is-2 img
+      -o-object-position: 75% 0
+      object-position: 75% 0
+    &.is-3 img
+      -o-object-position: 93% 0
+      object-position: 93% 0
+
+@media screen and (min-width: 48.5em)
+  .b-banner-slider .banner-slider-controls
+    bottom: 10rem
+
+@media screen and (min-width: 30em)
+  .b-banner-slider
+    height: calc(100vh - 6.5rem)
+    min-height: 76rem
+    .banner-slider-pagination
+      text-align: left
+
+@media screen and (min-width: 48.5em)
+  .b-banner-slider .banner-slider-bg-move
+    &.is-1 img, &.is-2 img, &.is-3 img
+      -o-object-position: 0 0
+      object-position: 0 0
+
+@media screen and (min-width: 64em)
+  .b-banner-slider
+    height: calc(100vh - 8rem)
+
+.b-hint
+  z-index: 2
+  font-size: 1.75rem
+  display: inline-block
+  position: relative
+  .reference
+    position: relative
+    width: 3rem
+    height: 3rem
+    cursor: pointer
+    &:before
+      content: url(/images/hint/question-a101a2d4c2.svg)
+      position: absolute
+      width: 3rem
+      height: 3rem
+      top: 0
+      left: 0
+  .popper
+    display: none
+    position: absolute
+    top: 0
+    left: 0
+    width: 33.5rem
+    background: #fff
+    padding: 2rem
+    border: 1px solid $clr-12
+    -webkit-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+    font-weight: 500
+  &.is-active
+    z-index: 3
+    .reference:before
+      content: url(/images/hint/close-37fc6f3e7a.svg)
+    .popper
+      display: block
+  .tooltip[x-placement=bottom-right-end-start]
+    margin-top: 1rem
+
+.b-achievements
+  -webkit-box-align: start
+  -ms-flex-align: start
+  align-items: flex-start
+  min-height: 27rem
+
+@media screen and (min-width: 48.5em)
+  .b-achievements
+    padding-top: 0
+    height: 100%
+
+@media screen and (min-width: 80em)
+  .b-achievements
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    padding-top: 3rem
+    height: 100%
+
+@media screen and (min-width: 48.5em)
+  .b-achievements .achievements-icon
+    margin-top: 2rem
+
+@media screen and (min-width: 80em)
+  .b-achievements .achievements-icon
+    margin-top: 4rem
+
+@media screen and (min-width: 64em)
+  .b-achievements .achievements-content
+    margin-top: 1rem
+
+.b-year-tab
+  margin-right: 4rem
+  .year-tab-content
+    line-height: 8rem
+    font-size: 5rem
+    margin-bottom: 1.27501rem
+    padding-top: 2.72501rem
+    font-weight: 700
+    color: $clr-7
+    transition: color .3s ease-out
+    cursor: pointer
+    opacity: 1
+    &:hover
+      color: $rgba-blue-2
+  &.active .year-tab-content
+    color: $clr-blue-4
+
+@media screen and (min-width: 48.5em)
+  .b-year-tab .year-tab-content
+    line-height: 8rem
+    font-size: 8rem
+    margin-bottom: 2.04001rem
+    padding-top: 1.96001rem
+
+@media screen and (min-width: 64em)
+  .b-year-tab .year-tab-content
+    line-height: 13rem
+    font-size: 13rem
+    margin-bottom: .81501rem
+    padding-top: 3.18501rem
+
+.b-switchable-content-on-years .switchable-content-on-years-item
+  display: none
+  &.active
+    display: block
+  &.is-parallax
+    height: 41rem
+    background-size: cover
+  &.is-2017
+    background-image: url(/images/about/on-year/2017/img-8789022e8c.jpg)
+  ul
+    margin-top: 1rem
+    margin-bottom: 2rem
+    li
+      margin-bottom: 1rem
+
+@media only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)
+  .b-switchable-content-on-years .switchable-content-on-years-item.is-2017
+    background-image: url(/images/about/on-year/2017/img@2x-e880ff365a.jpg)
+
+.b-docs-layout
+  padding-top: 7rem
+  position: relative
+  &:before
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 9998
+    content: ""
+    display: none
+    width: 100%
+    height: 100%
+    background: rgba(26, 27, 31, 0.6)
+    transition: opacity .3s
+    opacity: 0
+  .docs-layout-sidebar
+    position: fixed
+    top: 0
+    bottom: 0
+    height: 100%
+    width: 35rem
+    z-index: 9999
+    right: 100%
+    transition: transform .3s
+    padding-top: 7rem
+  .docs-layout-sidebar-header
+    position: absolute
+    top: 0
+    left: 0
+    padding: .5rem 0
+    width: 100%
+    height: 7rem
+    background: #fff
+  .docs-layout-sidebar-content
+    background: $clr-9
+    height: 100%
+    overflow: auto
+  .docs-layout-main-content
+    padding: 5rem 3rem
+  .docs-layout-up-btn-wrapper
+    bottom: 1rem
+    margin-right: 15px
+    opacity: 0
+    position: fixed
+    right: 1rem
+  &.has-animating-sidebar:before
+    display: block
+  &.has-open-sidebar
+    .docs-layout-sidebar
+      transform: translateX(100%)
+    &:before
+      display: block
+      opacity: 1
+
+@media screen and (min-width: 30em)
+  .b-docs-layout .docs-layout-main-content
+    padding: 5rem 4rem
+
+@media screen and (min-width: 48.5em)
+  .b-docs-layout .docs-layout-main-content
+    padding: 5rem 8rem
+
+@media screen and (min-width: 64em)
+  .b-docs-layout
+    &:before
+      display: none !important
+    &.has-open-sidebar .docs-layout-sidebar
+      transition: none
+      transform: none
+    .docs-layout-sidebar
+      left: 0
+      z-index: 0
+    .docs-layout-sidebar-header
+      display: none
+    .docs-layout-main
+      padding-left: 35rem
+
+@media print
+  .b-docs-layout
+    .docs-layout-header, .docs-layout-sidebar
+      display: none
+    .docs-layout-main-content
+      padding: 0
+
+.b-docs-nav
+  padding: 5rem
+  font-size: 1.75rem
+  ul
+    list-style: none
+    -webkit-padding-start: 0
+    padding-inline-start: 0
+  > ul > li
+    position: relative
+    padding-bottom: 1rem
+    padding-left: 3rem
+    + li
+      margin-top: 1rem
+    > a
+      color: $clr-1
+      &:active, &:hover
+        font-weight: 600
+    &:before
+      content: url(/images/docs/default-doc-6fc87f3d05.svg)
+      display: inline-block
+      width: 1.25rem
+      position: absolute
+      left: 0
+      top: 0.125rem
+    &.is-active
+      &:before
+        content: url(/images/docs/active-doc-abad2dcb26.svg)
+      > a
+        font-weight: 600
+        > ul
+          font-weight: 500
+      > ul
+        display: block
+    > ul
+      display: none
+      > li
+        padding-top: 1rem
+        > a
+          color: $clr-4
+        &.is-active > a
+          color: $clr-blue-3
+        > a
+          &:active, &:hover
+            color: $clr-blue-3
+
+.b-docs-content
+  max-width: 87rem
+  .docs-content-header
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-pack: justify
+    -ms-flex-pack: justify
+    justify-content: space-between
+    padding-bottom: 3rem
+  .docs-content-header-control .icon
+    display: inline-block
+    width: 1.75rem
+    vertical-align: middle
+  &.is-root-page
+    max-width: 108rem
+
+@media print
+  .b-docs-content
+    max-width: none
+    .docs-content-header
+      display: none
+
+.b-docs-markup
+  .docs-markup-anchor
+    position: relative
+    top: -7rem
+    visibility: hidden
+  .docs-markup-content
+    margin-top: 2rem
+    ~ ol
+      counter-reset: none
+  .docs-markup-box
+    margin-bottom: 3rem
+    padding: 3rem 4rem
+    border: 2px solid $clr-12
+    border-radius: 5px
+  address
+    margin-top: 1rem
+    font-style: normal
+  ol
+    counter-reset: a
+    list-style-type: none
+    margin: 0
+    padding: 0
+    > li
+      display: table
+      &:before
+        content: counters(a, ".") ". "
+        counter-increment: a
+      &.level-strong:before
+        font-weight: 600
+    &.with-indents > li:before
+      display: table-cell
+    > li > ol > li:before
+      content: counters(a, ".") " "
+      counter-increment: a
+      display: table-cell
+  ul
+    list-style-type: lower-alpha
+    -webkit-padding-start: 3rem
+    padding-inline-start: 3rem
+    > li > ul
+      list-style-type: decimal
+  ol > li
+    &:before
+      padding-right: 0.5rem
+    >
+      ol, ul
+        -webkit-margin-before: .5rem
+        margin-block-start: 0.5rem
+      ol > li:before
+        padding-right: 2rem
+    -webkit-margin-after: 2rem
+    margin-block-end: 2rem
+  ul > li
+    -webkit-margin-after: 2rem
+    margin-block-end: 2rem
+  ol > li:last-of-type, ul > li:last-of-type
+    -webkit-margin-after: 0
+    margin-block-end: 0
+  ol > li:first-of-type, ul > li:first-of-type
+    -webkit-margin-before: 2rem
+    margin-block-start: 2rem
+  ol > li >
+    ol > li, ul > li
+      -webkit-margin-after: 1rem
+      margin-block-end: 1rem
+  ul > li >
+    ol > li, ul > li
+      -webkit-margin-after: 1rem
+      margin-block-end: 1rem
+  ol > li >
+    ol > li:last-of-type, ul > li:last-of-type
+      -webkit-margin-after: 0
+      margin-block-end: 0
+  ul > li >
+    ol > li:last-of-type, ul > li:last-of-type
+      -webkit-margin-after: 0
+      margin-block-end: 0
+  ol > li >
+    ol > li:first-of-type, ul > li:first-of-type
+      -webkit-margin-before: 1rem
+      margin-block-start: 1rem
+  ul > li >
+    ol > li:first-of-type, ul > li:first-of-type
+      -webkit-margin-before: 1rem
+      margin-block-start: 1rem
+  ol > li:first-child
+    -webkit-margin-before: 0 !important
+    margin-block-start: 0 !important
+  ul
+    > li:first-child
+      -webkit-margin-before: 0 !important
+      margin-block-start: 0 !important
+    &.is-disc
+      list-style-type: disc !important
+  table
+    border-collapse: collapse
+    width: 100%
+  th
+    background-color: $clr-12
+    font-weight: 600
+  td, th
+    padding: 1rem 2rem
+  table, td, th
+    border: 1px solid $clr-1
+
+.b-hamburger
+  display: inline-block
+  width: 3rem
+  height: 3rem
+  cursor: pointer
+  .hamburger-item
+    display: block
+    width: 100%
+    height: .375rem
+    margin: .5rem 0
+    border-radius: 2px
+    transition: transform 0.25s cubic-bezier(0, 0, 0.2, 1), opacity 0.25s cubic-bezier(0, 0, 0.2, 1)
+    opacity: 1
+    &:first-child
+      margin-top: 0.5rem
+    &:last-child
+      margin-bottom: 0.5rem
+  &:hover .hamburger-item
+    will-change: transform
+  &.is-crossed .hamburger-item
+    &:first-of-type
+      transform: translateY(0.4rem) rotate(45deg)
+    &:nth-of-type(2)
+      opacity: 0
+    &:nth-of-type(3)
+      transform: translateY(-1.35rem) rotate(-45deg)
+  &.is-dark .hamburger-item
+    background: $clr-1
+
+@media screen and (min-width: 30em)
+  .b-hamburger
+    width: 4rem
+    height: 4rem
+
+@media screen and (min-width: 30em)
+  .b-hamburger .hamburger-item
+    margin: 1rem 0
+
+@media screen and (min-width: 30em)
+  .b-hamburger.is-crossed .hamburger-item:first-of-type
+    transform: translateY(1.35rem) rotate(45deg)
+
+.b-dialog
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100vh
+  overflow: auto
+  padding: 2rem 0
+  background: #fff
+  z-index: -1
+  opacity: 0
+  transition: opacity 0.2s ease-out, z-index 0.2s ease-out
+  .dialog-header
+    position: absolute
+    top: 2rem
+    left: 0
+    width: 100%
+    height: 7rem
+  .dialog-close
+    display: block
+    width: 4rem
+    height: 4rem
+    cursor: pointer
+  .dialog-content
+    padding-top: 10rem
+    width: 100%
+  &.is-show
+    opacity: 1
+    z-index: 99999
+
+@media screen and (min-width: 48.5em)
+  .b-dialog
+    padding: 3rem 0
+    .dialog-header
+      top: 3rem
+    .dialog-content
+      padding-top: 14rem
+
+.b-merchant-ui
+  position: relative
+  margin-top: 7rem
+  margin-right: -2.5rem
+  margin-bottom: -6rem
+  .merchant-ui-container
+    display: block
+    height: 51rem
+    width: 76rem
+    overflow: hidden
+    img
+      border-radius: 0.5rem 0.5rem 0 0
+
+@media screen and (min-width: 30em)
+  .b-merchant-ui
+    margin-right: -4rem
+    .merchant-ui-container
+      height: 58.5rem
+      width: 87rem
+
+@media screen and (min-width: 48.5em)
+  .b-merchant-ui
+    margin-top: 4rem
+    margin-right: -4rem
+    margin-bottom: -12rem
+    .merchant-ui-container
+      height: 43rem
+      width: 64rem
+
+@media screen and (min-width: 64em)
+  .b-merchant-ui
+    margin-right: -4rem
+    .merchant-ui-container
+      height: 58.5rem
+      width: 87rem
+
+.b-years-slider
+  overflow: hidden
+  .years-slider-wrapper
+    display: -webkit-inline-box
+    display: -ms-inline-flexbox
+    display: inline-flex
+    -ms-flex-wrap: nowrap
+    flex-wrap: nowrap
+    &:hover
+      will-change: transform
+      .years-slider-item
+        will-change: opacity
+  .years-slider-item
+    -webkit-box-flex: 0
+    -ms-flex: 0 0 auto
+    flex: 0 0 auto
+
+.b-modal-slider
+  position: relative
+  width: 100%
+  min-height: 100%
+  overflow: hidden
+  padding-bottom: 20rem
+  .modal-slider-wrapper
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-align: start
+    -ms-flex-align: start
+    align-items: flex-start
+    transition-property: transform
+    width: 100%
+  .modal-slider-item
+    -webkit-box-flex: 1
+    -ms-flex: 1 0 100%
+    flex: 1 0 100%
+    width: 100%
+    background: #fff
+    pointer-events: none
+    transition-property: opacity
+    &.is-active
+      pointer-events: auto
+    .is-height-auto
+      height: auto
+  .modal-slider-controls
+    position: absolute
+    width: 100%
+    bottom: 6rem
+  .modal-slider-control
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    &.is-disabled
+      visibility: hidden
+  .modal-slider-control-icon
+    cursor: pointer
+    width: 6rem
+    line-height: 0
+
+.b-business-step-icon
+  width: 100%
+  &.is-open
+    max-width: 35rem
+  &.is-refill, &.is-transfer
+    max-width: 61rem
+
+@media screen and (min-width: 30em)
+  .b-business-step-icon
+    padding: 0 1rem 0 3rem
+
+.b-pagination-control
+  display: inline-block
+  padding: 1.5rem
+  width: 6rem
+  height: 6rem
+  line-height: 0
+  border: 1px solid
+  border-radius: 50%
+  transition: border-color .3s
+  cursor: pointer
+  &.is-grey
+    border-color: $clr-12
+    svg
+      fill: $clr-1
+    &:hover
+      border-color: $clr-1
+  &.is-white
+    border-color: $hsla-5
+    svg
+      fill: #fff
+    &:hover
+      border-color: #fff
+  &.is-blue-filled
+    border-color: $clr-blue-4
+    background-color: $clr-blue-4
+    transition-property: border-color, background-color
+    svg
+      fill: #fff
+    &:hover
+      border-color: $clr-blue-3
+      background-color: $clr-blue-3
+  &.is-prev
+    transform: rotate(180deg)
+
+.b-slider-pagination
+  position: relative
+  margin: 0 auto
+  height: 3rem
+  overflow: hidden
+  white-space: nowrap
+  text-align: center
+  .slider-pagination-bullet
+    position: relative
+    display: inline-block
+    width: 1rem
+    height: 1rem
+    border-radius: 50%
+    margin-left: 1rem
+    transition: background-color 0.2s
+  &.is-blue .slider-pagination-bullet
+    background-color: $clr-7
+    &.is-active
+      background-color: $clr-blue-3
+  &.is-red .slider-pagination-bullet
+    background-color: #fff
+    &.is-active
+      background-color: $clr-red-1
+
+.b-slider-pagination-line
+  position: relative
+  height: .5rem
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-pack: justify
+  -ms-flex-pack: justify
+  justify-content: space-between
+  -webkit-box-flex: 1
+  -ms-flex: 1 1 auto
+  flex: 1 1 auto
+  border-radius: 0.25rem
+  &.is-blue .slider-pagination-bullet.is-active
+    background-color: $clr-blue-3
+  &.line-bg-grey-light
+    background-color: $clr-11
+  .slider-pagination-bullet
+    -webkit-box-flex: 1
+    -ms-flex-positive: 1
+    flex-grow: 1
+    opacity: 0
+    border-radius: 0.25rem
+    &.is-active
+      opacity: 1
+      transition: opacity 0.4s
+
+.b-shifted-stack
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  position: relative
+  .shifted-stack-item
+    &:first-child
+      transform: translateX(0)
+      z-index: 2
+    &:nth-child(2)
+      transform: translateX(-33.33333%)
+      z-index: 1
+    &:nth-child(3)
+      transform: translateX(-66.66667%)
+      z-index: 0
+
+.b-switchable-content-slider
+  position: relative
+  width: 100%
+  overflow: hidden
+  .switchable-content-slider-wrapper
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-align: start
+    -ms-flex-align: start
+    align-items: flex-start
+    transition-property: transform
+    width: 100%
+  .switchable-content-slider-item
+    -webkit-box-flex: 1
+    -ms-flex: 1 0 100%
+    flex: 1 0 100%
+    pointer-events: none
+    transition-property: opacity
+    text-align: center
+    &.is-active
+      pointer-events: auto
+
+.b-cookie-policy
+  position: fixed
+  display: none
+  left: 4rem
+  bottom: 4rem
+  z-index: 1000
+  padding: 2rem 0 3rem
+  background: #fff
+  color: $clr-5
+  font-size: 1.75rem
+  box-shadow: 0 2rem 4rem $rgba-3, 0 0.5rem 2rem $rgba-3
+  border-radius: .5rem
+  width: calc(100% - 8rem)
+  &.is-active
+    display: block
+  .cookie-policy-title
+    color: $clr-1
+  .cookie-policy-close
+    width: 2rem
+    height: 2rem
+    margin-left: auto
+    cursor: pointer
+    svg
+      fill: #fff
+
+@media screen and (min-width: 30em)
+  .b-cookie-policy
+    width: 50rem
+
+@media screen and (min-width: 48.5em)
+  .b-cookie-policy
+    width: 54rem
+
+.b-page-error
+  min-height: 100vh
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  .page-error-row
+    -ms-flex-preferred-size: 100%
+    flex-basis: 100%
+  .content
+    -ms-flex-item-align: center
+    align-self: center
+    padding-top: 4rem
+    padding-bottom: 2rem
+    > div
+      position: relative
+    .code-error
+      font-size: 15rem
+      position: absolute
+      line-height: 1
+      color: $clr-8
+      top: -2rem
+      z-index: -1
+      font-weight: 700
+  .footer
+    -ms-flex-item-align: end
+    align-self: flex-end
+    padding-bottom: 8rem
+    .hr
+      height: 1px
+      width: 100%
+      background: $clr-12
+    .footer-menu
+      display: -webkit-box
+      display: -ms-flexbox
+      display: flex
+      -webkit-box-orient: vertical
+      -webkit-box-direction: normal
+      -ms-flex-direction: column
+      flex-direction: column
+      padding-top: 3rem
+      font-size: 1.75rem
+      font-weight: 600
+      li
+        display: inline-block
+        list-style: none
+        a
+          color: $clr-1
+        &.is-separator
+          display: none
+          width: .5rem
+          height: .5rem
+          background: $clr-1
+          border-radius: 50%
+        + li
+          margin-top: 2rem
+    .copyright
+      font-size: 1.25rem
+
+@media screen and (min-width: 30em)
+  .b-page-error .content .code-error
+    font-size: 23rem
+    top: -6rem
+
+@media screen and (min-width: 48.5em)
+  .b-page-error .footer
+    padding-bottom: 14rem
+
+@media screen and (min-width: 48.5em)
+  .b-page-error .footer .footer-menu
+    display: -webkit-inline-box
+    display: -ms-inline-flexbox
+    display: inline-flex
+    -webkit-box-orient: horizontal
+    -webkit-box-direction: normal
+    -ms-flex-direction: row
+    flex-direction: row
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+
+@media screen and (min-width: 48.5em)
+  .b-page-error .footer .footer-menu li.is-separator
+    display: inline-block
+
+@media screen and (min-width: 48.5em)
+  .b-page-error .footer .footer-menu li + li
+    margin-left: 2rem
+    margin-top: 0
+
+.b-app-buttons
+  max-width: 47rem
+  margin-top: 5rem
+  .app-button-item
+    width: 16rem
+    background: #fff
+    border-radius: .375rem
+    padding-top: 1rem
+    padding-bottom: 1rem
+    transition: background 0.3s
+    &:first-of-type
+      margin-right: 2rem
+      .c-icon
+        margin-left: 0.5rem
+    .app-button-item-icon
+      display: block
+      width: 12rem
+      height: 4rem
+
+.b-preload-img
+  z-index: -1
+  overflow: hidden
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  img
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    -o-object-fit: cover
+    object-fit: cover
+    font-family: "object-fit: cover;"
+    transform: scale(1.1)
+    &.is-thumb
+      filter: blur(30px)
+      transition: visibility 0s linear 0.6s
+    &.is-target
+      opacity: 0
+      transition: transform, opacity .25s linear .2s
+      will-change: transform, opacity
+      &.is-lazyloaded
+        opacity: 1
+        transform: scale(1)
+  &.is-complete img.is-thumb
+    visibility: hidden
+
+.b-header
+  width: 100%
+  padding-top: .5rem
+  padding-bottom: .5rem
+  position: fixed
+  top: 0
+  z-index: 999
+  transition: transform 0.3s cubic-bezier(0, 0, 0.2, 1)
+  .nav-link
+    color: #fff
+  &:before
+    content: ""
+    position: absolute
+    display: block
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    z-index: -1
+    background: $clr-1
+    transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1)
+  .header-container
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-pack: justify
+    -ms-flex-pack: justify
+    justify-content: space-between
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+  .header-logo
+    width: 18rem
+    padding-top: 1rem
+    padding-right: 4rem
+  .header-nav-menu
+    -webkit-box-flex: 1
+    -ms-flex: 1
+    flex: 1
+    padding: 0 2rem 0 4rem
+  .header-nav-control
+    padding-left: 2em
+  .header-nav-item
+    margin: 0 0.625rem
+    &:last-of-type
+      margin-right: 0
+    &:first-of-type
+      margin-left: 0
+  .hide-create
+    display: none
+  &.hover-black-font:hover
+    .nav-link:hover
+      color: $clr-5
+    .header-logo-icon
+      fill: $clr-1
+    .log-in-btn
+      border-color: $clr-12
+    .nav-link
+      color: $rgba-10
+    .hamburger-item
+      background: $clr-1
+    &:before
+      opacity: 1 !important
+  &.hover-white-font:hover
+    .nav-link:hover
+      color: $clr-5
+    .header-logo-icon
+      fill: #fff
+    .nav-link
+      color: #fff
+    .log-in-btn
+      border-color: $clr-12
+    .hamburger-item
+      background: #fff
+    &:before
+      opacity: 1 !important
+  &.scrolled-down
+    transform: translateY(-100%)
+    .nav-link:hover
+      color: $clr-5
+    .header-logo-icon
+      fill: #fff
+    .nav-link
+      color: #fff
+    .log-in-btn
+      border-color: $clr-12
+    .hamburger-item
+      background: #fff
+    .create
+      display: block
+  &.show-other-white-font
+    &:before
+      opacity: 1 !important
+    .nav-link:hover
+      color: $clr-5
+    .header-logo-icon
+      fill: #fff
+    .nav-link
+      color: #fff
+    .log-in-btn
+      border-color: $clr-12
+    .hamburger-item
+      background: #fff
+  &.scrolled-up-black-font
+    .create
+      display: block
+    &:before
+      opacity: 0.88
+    .nav-link:hover
+      color: $clr-5
+    .header-logo-icon
+      fill: $clr-1
+    .log-in-btn
+      border-color: $clr-12
+    .nav-link
+      color: $rgba-10
+    .hamburger-item
+      background: $clr-1
+  &.scrolled-up-white-font
+    .create
+      display: block
+    &:before
+      opacity: 0.88
+    .nav-link:hover
+      color: $clr-5
+    .header-logo-icon
+      fill: #fff
+    .nav-link
+      color: #fff
+    .log-in-btn
+      border-color: $clr-12
+    .hamburger-item
+      background: #fff
+  &.show-top-black-font
+    &:before
+      opacity: 1
+    .nav-link:hover
+      color: $clr-5
+    .header-logo-icon
+      fill: $clr-1
+    .log-in-btn
+      border-color: $clr-12
+    .nav-link
+      color: $rgba-10
+    .hamburger-item
+      background: $clr-1
+  &.show-top-white-font
+    &:before
+      opacity: 1
+    .nav-link:hover
+      color: $clr-5
+    .header-logo-icon
+      fill: #fff
+    .nav-link
+      color: #fff
+    .log-in-btn
+      border-color: $clr-12
+    .hamburger-item
+      background: #fff
+  &.show-top-white-font-transparent
+    &:before
+      opacity: 0
+    .nav-link:hover
+      color: $clr-5
+    .header-logo-icon
+      fill: #fff
+    .nav-link
+      color: #fff
+    .log-in-btn
+      border-color: $clr-12
+    .hamburger-item
+      background: #fff
+  &.show-top-black-font-transparent
+    &:before
+      opacity: 0
+    .nav-link:hover
+      color: $clr-5
+    .header-logo-icon
+      fill: $clr-1
+    .log-in-btn
+      border-color: $clr-12
+    .nav-link
+      color: $rgba-10
+    .hamburger-item
+      background: $clr-1
+  &.show-top-black-font-white-bg-transparent
+    &:before
+      background-color: #fff
+      opacity: 0.7
+    .nav-link:hover
+      color: $clr-5
+    .header-logo-icon
+      fill: $clr-1
+    .log-in-btn
+      border-color: $clr-12
+    .nav-link
+      color: $rgba-10
+    .hamburger-item
+      background: $clr-1
+
+@media screen and (min-width: 30em)
+  .b-header .header-logo
+    width: 22rem
+
+.b-submenu
+  display: none
+  position: absolute
+  top: 100%
+  left: -2.5rem
+  list-style: none
+  background: #fff
+  padding: 1.5rem 3rem 3rem
+  border-radius: .5rem
+  min-width: 50rem
+  box-shadow: 0 1rem 3rem 0 $rgba-3
+  &:before
+    content: ""
+    display: block
+    position: absolute
+    top: -2rem
+    left: 4rem
+    width: 0
+    height: 0
+    border: 1rem solid transparent
+    border-bottom-color: #fff
+  .submenu-icon
+    top: 1.5rem
+  .submenu-title
+    color: $clr-1
+    font-weight: 600
+    line-height: 3.5rem
+    font-size: 2rem
+    margin-bottom: .42001rem
+    padding-top: 1.08001rem
+  .submenu-description, .submenu-title
+    transition: color, 0.3s
+  .submenu-description
+    font-weight: 500
+    line-height: 2.5rem
+    font-size: 1.75rem
+    margin-bottom: -.80374rem
+    padding-top: 0.80376rem
+  .submenu-item:hover
+    .submenu-title
+      color: $clr-1
+    .submenu-description
+      color: $clr-blue-4
+  .submenu-link
+    display: block
+    padding: 1rem 1.3rem 1rem 0
+  &:hover .submenu-title
+    color: $clr-4
+
+.b-iban-short-info .iban-short-info-item
+  padding: 2rem 0 0
+  -webkit-box-flex: 0
+  -ms-flex: 0 0 100%
+  flex: 0 0 100%
+  &:not(:first-of-type)
+    margin-top: 3rem
+  &:first-of-type
+    padding-left: 0
+  &:last-of-type
+    padding-right: 0
+  .short-info-item-title
+    font-weight: 600
+    line-height: 4.5rem
+    .title-first-char
+      font-size: 3.5rem
+
+@media screen and (min-width: 64em)
+  .b-iban-short-info .iban-short-info-item:not(:first-of-type)
+    margin-top: 0
+
+@media screen and (min-width: 30em)
+  .b-iban-short-info .iban-short-info-item
+    -ms-flex-preferred-size: 75%
+    flex-basis: 75%
+
+@media screen and (min-width: 48.5em)
+  .b-iban-short-info .iban-short-info-item
+    -ms-flex-preferred-size: 66.6666%
+    flex-basis: 66.6666%
+
+@media screen and (min-width: 64em)
+  .b-iban-short-info .iban-short-info-item
+    padding-right: 2rem
+    padding-left: 2rem
+    -ms-flex-preferred-size: 33.3333%
+    flex-basis: 33.3333%
+
+.b-step-start-iban
+  padding-top: 7.5rem
+  .step-start-iban-item
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    -ms-flex-preferred-size: 100%
+    flex-basis: 100%
+    .step-start-iban-item-number
+      width: 7rem
+      height: 6rem
+      margin-right: 2rem
+    &:not(:first-of-type)
+      margin-top: 4rem
+  .step-start-iban-icon
+    width: 6rem
+    height: 6rem
+    transform: rotate(-90deg)
+    display: none
+
+@media screen and (min-width: 64em)
+  .b-step-start-iban .step-start-iban-item
+    -ms-flex-preferred-size: auto
+    flex-basis: auto
+
+@media screen and (min-width: 64em)
+  .b-step-start-iban .step-start-iban-item .step-start-iban-item-number
+    width: 5rem
+    height: 4rem
+    margin-right: 1.5rem
+
+@media screen and (min-width: 80em)
+  .b-step-start-iban .step-start-iban-item .step-start-iban-item-number
+    width: 7rem
+    height: 6rem
+    margin-right: 2rem
+
+@media screen and (min-width: 64em)
+  .b-step-start-iban .step-start-iban-item:not(:first-of-type)
+    margin-top: 0
+
+@media screen and (min-width: 64em)
+  .b-step-start-iban .step-start-iban-icon
+    display: block
+    width: 4rem
+    height: 4rem
+
+@media screen and (min-width: 80em)
+  .b-step-start-iban .step-start-iban-icon
+    width: 6rem
+    height: 6rem
+
+.b-use-like .use-like-item
+  -webkit-box-flex: 0
+  -ms-flex: 0 0 100%
+  flex: 0 0 100%
+  margin-top: 7.5rem
+  .use-like-item-icon
+    width: 10rem
+    margin-bottom: 5rem
+    &.with-img
+      margin-bottom: 4rem
+
+@media screen and (min-width: 30em)
+  .b-use-like .use-like-item
+    -ms-flex-preferred-size: 60%
+    flex-basis: 60%
+
+@media screen and (min-width: 48.5em)
+  .b-use-like .use-like-item
+    -ms-flex-preferred-size: 30%
+    flex-basis: 30%
+
+@media screen and (min-width: 80em)
+  .b-use-like .use-like-item
+    -ms-flex-preferred-size: 30%
+    flex-basis: 30%
+
+.b-partner-slider
+  padding-top: 4rem
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  .partner-slider-item
+    width: auto
+    opacity: 1
+    text-align: center
+    padding-right: 14rem
+
+.b-for-whom
+  .img-col
+    width: 100%
+    margin-top: 7.5rem
+  .digits-icon
+    display: block
+    width: 2rem
+    height: 1.75rem
+  .for-whom-img
+    position: relative
+    height: 39rem
+    img
+      position: absolute
+      width: 50rem
+    &.is-left img, &.is-right img
+      left: 0
+
+@media screen and (min-width: 48.5em)
+  .b-for-whom .img-col
+    margin-top: 0
+
+@media screen and (min-width: 30em)
+  .b-for-whom .for-whom-img.is-left img
+    left: auto
+    right: 0
+
+.b-ibam-banner
+  height: auto
+  padding-top: 18rem
+  padding-bottom: 18rem
+  position: relative
+  .ibam-banner-title
+    font-weight: 700
+  &:before
+    content: ""
+    position: absolute
+    width: 50%
+    height: 100%
+    display: block
+    top: 0
+    left: -2.5rem
+    z-index: -1
+    background: url(/images/iban/first-block-bg/dots-2b033359cb.png) no-repeat 100% 0
+    background-size: cover
+  &:after
+    content: ""
+    position: absolute
+    width: 50%
+    height: 100%
+    display: block
+    top: 0
+    right: -2.5rem
+    z-index: -1
+    background: url(/images/iban/first-block-bg/rectangle-0fdd45758f.png) no-repeat 0 0
+    background-size: contain
+
+@media screen and (min-width: 48.5em)
+  .b-ibam-banner
+    height: 75rem
+
+@media screen and (min-width: 64em)
+  .b-ibam-banner
+    height: 78rem
+
+@media (-webkit-min-device-pixel-ratio: 2)
+  .b-ibam-banner:before
+    background: url(/images/iban/first-block-bg/dots@2x-acb3fd9e6c.png) no-repeat 100% 0
+    background-size: cover
+
+@media (-webkit-min-device-pixel-ratio: 3)
+  .b-ibam-banner:before
+    background: url(/images/iban/first-block-bg/dots@3x-a7c4afc8b4.png) no-repeat 100% 0
+    background-size: cover
+
+@media (-webkit-min-device-pixel-ratio: 2)
+  .b-ibam-banner:after
+    background: url(/images/iban/first-block-bg/rectangle@2x-21492983bf.png) no-repeat 100% 0
+    background-size: contain
+
+@media (-webkit-min-device-pixel-ratio: 3)
+  .b-ibam-banner:after
+    background: url(/images/iban/first-block-bg/rectangle@3x-f0f002880a.png) no-repeat 100% 0
+    background-size: contain
+
+.b-cards-iban
+  position: relative
+  display: inline-block
+  width: 100%
+  .cards-iban-item
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    min-height: 40rem
+    background: #fff
+    border-radius: 1rem
+    padding: 2rem 5%
+    opacity: .5
+    z-index: 0
+    box-shadow: 0 3rem 10rem -3rem $rgba-4
+    transform: scale(0.9) translateY(15%)
+    transition: opacity .4s .4s, transform .8s
+    transition-timing-function: ease-out
+    .opacity-wrap
+      opacity: 0
+      transition: opacity 0.4s ease-out
+    .card-iban-header
+      border-bottom: 1px solid $clr-12
+      padding-bottom: 2rem
+      .card-header-img
+        border-radius: 50%
+    .card-iban-row
+      margin-top: 2rem
+      margin-bottom: 1rem
+    &.is-active
+      position: relative
+      transform: scale(1)
+      opacity: 1
+      z-index: 1
+      transition: opacity .3s, transform .8s
+      .opacity-wrap
+        opacity: 1
+
+@media screen and (min-width: 30em)
+  .b-cards-iban .cards-iban-item
+    width: 48rem
+    padding: 4rem 5rem
+
+.b-iban-mobile
+  position: relative
+  z-index: -1
+  background: $clr-10
+  .iban-mobile-item
+    position: relative
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    &:first-of-type
+      padding-top: 11.5rem
+      padding-bottom: 12.5rem
+    &.has-change-bg
+      background: $clr-10
+      &:after
+        content: ""
+        position: absolute
+        height: 100%
+        width: 100vw
+        background: inherit
+        left: 0
+        top: 0
+        z-index: -1
+  .shape
+    z-index: -1
+  .shape-square
+    position: absolute
+    width: 33.5rem
+    height: 33.5rem
+    top: 0
+    left: 0
+    background: $clr-yellow-1
+  .shape-triangle
+    position: absolute
+    width: 0
+    height: 0
+    border: 23.75rem solid transparent
+    border-top-color: $clr-blue-5
+    left: 9.75rem
+    top: 43.25rem
+    transform: rotate(-45deg)
+  .pattern-bg
+    position: absolute
+    width: 100%
+    height: 100%
+    left: 34.5rem
+    top: 0
+    background: url(/images/iban/pattern-bg-2022a6ca9e.svg)
+  .phone-img
+    width: 100%
+    text-align: center
+    z-index: 2
+    img
+      border-radius: 4rem
+
+@media screen and (min-width: 30em)
+  .b-iban-mobile
+    background: transparent
+
+@media screen and (min-width: 30em)
+  .b-iban-mobile .iban-mobile-item
+    height: 67rem
+
+@media screen and (min-width: 48.5em)
+  .b-iban-mobile .iban-mobile-item.has-change-bg
+    background: transparent
+
+@media screen and (min-width: 48.5em)
+  .b-iban-mobile .pattern-bg
+    width: 43rem
+
+.b-iban-title
+  font-size: 3rem
+  line-height: 4rem
+
+@media screen and (min-width: 64em)
+  .b-iban-title
+    font-size: 4rem
+    line-height: 5rem
+
+.b-partner-iban
+  margin-top: 12.5rem
+  margin-bottom: 12.5rem
+
+@media screen and (min-width: 30em)
+  .b-partner-iban
+    margin-top: 15rem
+    margin-bottom: 15rem
+
+.b-payout-iban img
+  border-radius: 1.5rem
+
+.b-partner-career
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-pack: start
+  -ms-flex-pack: start
+  justify-content: flex-start
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  margin-top: 7rem
+  width: 100%
+  .partner-panel
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-flex: 1
+    -ms-flex: 1
+    flex: 1
+    -webkit-box-pack: end
+    -ms-flex-pack: end
+    justify-content: flex-end
+  .partner-item
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    width: 16rem
+    height: 16rem
+    background: $clr-10
+    margin: 0 1rem 1rem 0
+  .partner-icon
+    width: 9rem
+    height: 2rem
+    margin: auto
+
+@media screen and (min-width: 30em)
+  .b-partner-career
+    -ms-flex-wrap: nowrap
+    flex-wrap: nowrap
+
+@media screen and (min-width: 64em)
+  .b-partner-career
+    -webkit-box-pack: end
+    -ms-flex-pack: end
+    justify-content: flex-end
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    margin-top: 0
+
+@media screen and (min-width: 0em)
+  .b-partner-career .partner-panel
+    -webkit-box-pack: start
+    -ms-flex-pack: start
+    justify-content: flex-start
+
+@media screen and (min-width: 48.5em)
+  .b-partner-career .partner-panel
+    -webkit-box-flex: 0
+    -ms-flex: none
+    flex: none
+
+@media screen and (min-width: 64em)
+  .b-partner-career .partner-panel
+    -webkit-box-pack: end
+    -ms-flex-pack: end
+    justify-content: flex-end
+
+@media screen and (min-width: 30em)
+  .b-partner-career .partner-item
+    -webkit-box-flex: 1
+    -ms-flex: 1
+    flex: 1
+    height: auto
+    width: auto
+    padding: 20% 0
+
+@media screen and (min-width: 48.5em)
+  .b-partner-career .partner-item
+    width: 18.5rem
+    height: 18.5rem
+    margin-right: 2rem
+    -webkit-box-flex: 0
+    -ms-flex: none
+    flex: none
+    padding: 0
+
+@media screen and (min-width: 64em)
+  .b-partner-career .partner-item
+    margin: 0 0 1rem 1rem
+    width: 16.325rem
+    height: 16.325rem
+
+@media screen and (min-width: 80em)
+  .b-partner-career .partner-item
+    width: 18.5rem
+    height: 18.5rem
+    margin: 0 0 2rem 2rem
+
+@media screen and (min-width: 48.5em)
+  .b-partner-career .partner-icon
+    width: 12rem
+
+@media screen and (min-width: 64em)
+  .b-partner-career .partner-icon
+    width: 9rem
+
+@media screen and (min-width: 80em)
+  .b-partner-career .partner-icon
+    width: 12rem
+
+.b-line
+  height: 1px
+  background: $clr-12
+  &.full-width
+    width: 100%
+
+.b-sort-table
+  .sort-table-header
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-pack: justify
+    -ms-flex-pack: justify
+    justify-content: space-between
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    margin-bottom: 3rem
+  .table-switch
+    width: 100%
+  .switch-item
+    font-size: 1.75rem
+    padding: 1rem
+  .table-tab
+    display: none
+    &.active
+      display: block
+  .show-md
+    display: none
+  .subtable
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -ms-flex-direction: column
+    flex-direction: column
+    margin-bottom: 3rem
+    .table-header
+      margin-top: 0
+      margin-bottom: 3rem
+  .table-header
+    font-size: 2rem
+    &.is-grey
+      color: $clr-4
+  .table-row
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -ms-flex-direction: column
+    flex-direction: column
+    background: $clr-10
+    padding: 2rem 3rem
+    margin-bottom: 1rem
+    border-radius: 5px
+    font-size: 2.25rem
+    color: $clr-1
+    transition: background 0.3s ease-out
+    &:hover
+      background: $clr-3
+      color: #fff
+  .table-cell
+    font-weight: 500
+    &:first-of-type
+      -webkit-box-flex: 0.6
+      -ms-flex: 0.6
+      flex: 0.6
+      margin-right: 4rem
+      margin-bottom: 1rem
+    &:last-of-type
+      -webkit-box-flex: 0.4
+      -ms-flex: 0.4
+      flex: 0.4
+      color: $clr-5
+
+@media screen and (min-width: 48.5em)
+  .b-sort-table .table-switch
+    width: auto
+
+@media screen and (min-width: 30em)
+  .b-sort-table .switch-item
+    font-size: 2rem
+    padding: 1.25rem 2rem
+
+@media screen and (min-width: 48.5em)
+  .b-sort-table .show-md
+    display: block
+
+@media screen and (min-width: 30em)
+  .b-sort-table .subtable .table-header
+    margin-top: 3rem
+
+@media screen and (min-width: 48.5em)
+  .b-sort-table .subtable .table-header
+    margin-bottom: 4rem
+
+@media screen and (min-width: 48.5em)
+  .b-sort-table .table-header
+    font-size: 3rem
+
+@media screen and (min-width: 48.5em)
+  .b-sort-table .table-row
+    -webkit-box-orient: horizontal
+    -webkit-box-direction: normal
+    -ms-flex-direction: row
+    flex-direction: row
+
+@media screen and (min-width: 30em)
+  .b-sort-table .table-cell:first-of-type
+    margin-bottom: 1.6rem
+
+@media screen and (min-width: 48.5em)
+  .b-sort-table .table-cell:first-of-type
+    margin-bottom: 0
+
+.b-backward
+  position: fixed
+  width: 100%
+  top: 6rem
+  padding: .9rem 0
+  border: 1px solid $clr-12
+  border-right: 0
+  border-left: 0
+  z-index: 1
+  transition: all 0.3s cubic-bezier(0, 0, 0.2, 1)
+  &:after
+    content: ""
+    position: absolute
+    display: block
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    z-index: -1
+    background: #fff
+    opacity: .88
+    transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1)
+  .backward-arrow
+    width: 3rem
+    height: 2.375rem
+  .backward-header
+    color: $clr-4
+    font-weight: 600
+  &.scrolled-down
+    top: 0
+
+@media screen and (min-width: 30em)
+  .b-backward
+    top: 7.3rem
+
+.b-vacancy
+  .description
+    font-size: 2.25rem
+  .bullet
+    font-size: 2.7rem
+    line-height: 2.7rem
+    margin-right: 3rem
+    color: $clr-blue-2
+
+.b-interesting-vacancy
+  position: static
+  padding-top: 11rem
+
+@media screen and (min-width: 30em)
+  .b-interesting-vacancy
+    padding-top: 15rem
+
+@media screen and (min-width: 64em)
+  .b-interesting-vacancy
+    padding-top: 7rem
+    position: sticky
+    top: 0
+    transition: top 0.2s cubic-bezier(0, 0, 0.2, 1)
+
+.b-vacancy-title
+  font-size: 3rem
+
+@media screen and (min-width: 30em)
+  .b-vacancy-title
+    font-size: 4rem
+
+@media screen and (min-width: 48.5em)
+  .b-vacancy-title
+    font-size: 4rem
+
+@media screen and (min-width: 48.5em)
+  .b-epa-card-item
+    min-height: 13.75rem
+
+.b-hubspot-form
+  -webkit-box-orient: vertical
+  -webkit-box-direction: normal
+  -ms-flex-direction: column
+  flex-direction: column
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  justify-content: center
+  height: 100%
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  .hubspot-row
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    &:last-of-type
+      padding-top: 1rem
+      .hubspot-col
+        padding-bottom: 0
+  .hubspot-col
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -ms-flex-direction: column
+    flex-direction: column
+    -webkit-box-flex: 1
+    -ms-flex: 1 1 100%
+    flex: 1 1 100%
+    margin: 0
+    padding-bottom: 3rem
+  .hubspot-label
+    font-weight: 500
+    line-height: 1.5rem
+    padding-bottom: 2rem
+  .hubspot-input
+    border-radius: 4px
+    font-size: 2rem
+    padding: 1.2rem
+    color: #fff
+    background-color: $hsla-2
+    border: 1px solid transparent
+    font-weight: 500
+    outline: none
+    width: 100%
+    text-overflow: ellipsis
+    &:focus
+      border: 1px solid $hsla-6
+  .hubspot-select
+    &.focused .toggler
+      border: 1px solid $hsla-6
+    .search-panel
+      padding: 1rem
+    &.open
+      .toggler
+        background-color: #fff
+        color: $clr-1
+        border-bottom: 1px solid $clr-12
+      .toggler-icon svg
+        fill: $clr-1
+    .toggler
+      border: 1px solid transparent
+      background-color: $hsla-2
+      color: #fff
+      padding: 0.9rem
+    .list-select-item
+      padding: 0.9rem
+    .toggler-icon svg
+      fill: #fff
+
+@media screen and (min-width: 48.5em)
+  .b-hubspot-form .hubspot-row
+    -ms-flex-wrap: nowrap
+    flex-wrap: nowrap
+
+@media screen and (min-width: 48.5em)
+  .b-hubspot-form .hubspot-col
+    -webkit-box-flex: 1
+    -ms-flex: 1 1 auto
+    flex: 1 1 auto
+    &:nth-child(2n)
+      margin-left: 3rem
+
+.b-notification
+  height: 21rem
+  border-radius: 4px
+  position: relative
+  width: 100%
+  -webkit-box-orient: vertical
+  -webkit-box-direction: normal
+  -ms-flex-direction: column
+  flex-direction: column
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  justify-content: center
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  .close-btn
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-pack: center
+    -ms-flex-pack: center
+    justify-content: center
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    position: absolute
+    top: 1rem
+    right: 2rem
+    width: 3rem
+    height: 3rem
+    cursor: pointer
+    background-color: $hsla-3
+    border-radius: 50%
+  .close-btn-icon
+    width: 1rem
+  .notification-title
+    text-align: center
+    padding: 0 2rem
+  .notification-content
+    padding: 0 2rem
+    text-align: center
+    color: $hsla-8
+
+@media screen and (min-width: 30em)
+  .b-notification .close-btn
+    top: 3rem
+    right: 3rem
+
+@media screen and (min-width: 30em)
+  .b-notification .notification-content
+    padding: 0 11rem
+
+.b-page-illustration
+  min-height: 100vh
+  position: relative
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  overflow: hidden
+  padding-top: 11rem
+  padding-bottom: 7rem
+  background-image: radial-gradient(circle at 0 0, $clr-1, #0f1132)
+  .illustration-logo-container
+    position: absolute
+    width: 100%
+    top: 2rem
+  .illustration-logo
+    width: 14rem
+  .illustration-row
+    -webkit-box-orient: vertical
+    -webkit-box-direction: reverse
+    -ms-flex-direction: column-reverse
+    flex-direction: column-reverse
+  .illustration-image-container
+    width: 100%
+    position: relative
+    height: auto
+  .illustration-image
+    width: 100%
+    height: auto
+    max-width: 61rem
+    padding-bottom: 4rem
+
+@media screen and (min-width: 30em)
+  .b-page-illustration
+    padding-top: 15rem
+
+@media screen and (min-width: 48.5em)
+  .b-page-illustration
+    padding-top: 0
+
+@media screen and (min-width: 30em)
+  .b-page-illustration .illustration-logo-container
+    top: 3rem
+
+@media screen and (min-width: 48.5em)
+  .b-page-illustration .illustration-logo-container
+    top: 4rem
+
+@media screen and (min-width: 30em)
+  .b-page-illustration .illustration-logo
+    width: 18rem
+
+@media screen and (min-width: 48.5em)
+  .b-page-illustration .illustration-row
+    -webkit-box-orient: horizontal
+    -webkit-box-direction: normal
+    -ms-flex-direction: row
+    flex-direction: row
+
+@media screen and (min-width: 48.5em)
+  .b-page-illustration .illustration-image-container
+    height: 30rem
+
+@media screen and (min-width: 30em)
+  .b-page-illustration .illustration-image
+    height: auto
+
+@media screen and (min-width: 48.5em)
+  .b-page-illustration .illustration-image
+    position: absolute
+    left: 0
+    top: -50%
+    width: auto
+    height: auto
+    max-width: none
+    padding: 0
+
+.b-docs-table.is-align-top tbody
+  vertical-align: top
+
+.b-checkbox
+  cursor: pointer
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  .checkbox-mark
+    display: block
+    width: 2rem
+    height: 2rem
+    border: 1px solid
+    border-color: $clr-12
+    border-radius: 3px
+    background-color: #fff
+    cursor: pointer
+    &.is-selected
+      border-color: $clr-7
+      background: $clr-7 url(/images/check-45a3bc3169.svg) no-repeat 50%
+  &[data-disabled=true] .checkbox-mark
+    filter: grayscale(1)
+    opacity: 0.6
+
+.extend-l-footer
+  font-size: 1.75rem
+  padding-top: 2rem
+  nav
+    padding-top: 0
+  .footer-row + .footer-row
+    margin-top: 4rem
+  .list-item
+    width: 100%
+    position: relative
+    .title
+      margin-bottom: 0.5rem
+    .no-turn
+      .more, .title
+        display: none
+      ul
+        display: block
+    .content-center
+      text-align: center
+    .title
+      margin-top: 3rem
+      cursor: pointer
+      position: relative
+      font-weight: 500
+    .sub-menu
+      .has-color-icon
+        position: relative
+        .icon-default, .icon-hover
+          transition: opacity 0.3s
+        .icon-default
+          opacity: 1
+        .icon-hover
+          position: absolute
+          left: 0
+          top: 0
+          opacity: 0
+        &:hover
+          .icon-default
+            opacity: 0
+          .icon-hover
+            opacity: 1
+      .social-link
+        width: 28rem
+        margin-bottom: 5rem
+      a
+        color: $clr-5
+    .more
+      position: absolute
+      width: 3rem
+      height: 0
+      top: 0
+      right: 0
+      svg
+        transform: scale(1)
+        fill: #fff
+    .mobile-submenu-checkbox
+      display: none
+      &:checked ~
+        .title .more svg
+          transform: scale(-1)
+        ul
+          display: block
+    ul
+      display: none
+      li
+        list-style: none
+        padding: 1rem 0 0.75rem
+        a
+          color: $clr-5
+          &:hover
+            color: #fff
+          &.icon
+            width: 4rem
+            height: 4rem
+            svg
+              fill: #fff
+            &.apps-icon
+              width: 12rem
+              height: 4rem
+              display: block
+              margin-bottom: 3rem
+              margin-right: 1rem
+              svg
+                fill: #fff
+              &.android
+                margin-left: 2.5rem
+    &.col-with-icon
+      -ms-flex-preferred-size: 50%
+      flex-basis: 50%
+      width: auto
+      &:first-of-type
+        -webkit-box-flex: 1
+        -ms-flex: 1 1 auto
+        flex: 1 1 auto
+      .sub-menu li
+        -ms-flex-wrap: nowrap
+        flex-wrap: nowrap
+    &.mobile-submenu-checkbox
+      ul
+        display: block
+      .more
+        display: none
+  .content
+    padding-top: 0
+  hr
+    border: 0
+    border-top: 1px solid #fff
+  .licence
+    margin-bottom: 3rem
+    padding-top: 3.5rem
+  .notation
+    color: $clr-5
+    p
+      line-height: 1.6
+      font-size: 1.25rem
+  &.is-light
+    .title
+      font-weight: 600
+    hr
+      border-top-color: $clr-12
+    .list-item
+      ul li a.icon.apps-icon svg
+        fill: $clr-5
+      .more svg
+        fill: $clr-3
+      .sub-menu a
+        color: $clr-4
+        &:hover
+          color: $clr-3
+        &.icon svg
+          fill: $clr-9
+
+@media screen and (min-width: 64em)
+  .extend-l-footer .list-item .content-right-lg
+    text-align: right
+
+@media screen and (min-width: 48.5em)
+  .extend-l-footer .list-item .title
+    cursor: auto
+
+@media screen and (min-width: 30em)
+  .extend-l-footer .list-item .sub-menu .social-link
+    margin-left: auto
+
+@media screen and (min-width: 48.5em)
+  .extend-l-footer
+    padding-top: 0
+    .list-item
+      width: 50%
+      .title
+        margin-top: 4rem
+        .more
+          display: none
+      ul
+        display: block
+
+@media screen and (min-width: 64em)
+  .extend-l-footer .list-item
+    width: 20%
+    padding-right: 2rem
+    &:last-of-type
+      padding-right: 0
+    .title
+      margin-top: 6.5rem
+    ul li a.icon.apps-icon
+      display: block
+
+.u-b-1
+  bottom: 1rem
+
+.u-b-2
+  bottom: 2rem
+
+.u-b-3
+  bottom: 3rem
+
+.u-b-4
+  bottom: 4rem
+
+.u-b-5
+  bottom: 5rem
+
+.u-b-6
+  bottom: 6rem
+
+.u-b-7
+  bottom: 7rem
+
+.u-b-8
+  bottom: 8rem
+
+.u-b-9
+  bottom: 9rem
+
+.u-b-10
+  bottom: 10rem
+
+.u-ofw-h
+  overflow: hidden !important
+
+.u-ofw-v
+  overflow: visible !important
+
+.u-ofw-a
+  overflow: auto !important
+
+.u-ofw-s
+  overflow: scroll !important
+
+.u-tt-c
+  text-transform: capitalize
+
+.u-tt-l
+  text-transform: lowercase
+
+.u-tt-u
+  text-transform: uppercase
+
+[class*=has-bg-custom-].is-outside-left
+  position: relative
+  &:before
+    content: ""
+    display: block
+    position: absolute
+    height: 100%
+    width: 100vw
+    top: 0
+    left: -100vw
+    background: inherit
+
+.has-bg-custom-light-gray
+  background: $clr-10
+
+.u-box-shadow-custom-ui
+  display: inline-block
+  position: relative
+  line-height: 0
+  &:after
+    content: ""
+    position: absolute
+    z-index: -1
+    top: .5rem
+    left: .5rem
+    width: calc(100% - 1rem)
+    height: calc(100% - 1rem)
+    border-radius: 4rem
+    box-shadow: 0 3rem 10rem -0.5rem rgba(0, 0, 0, 0.1)
+
+.u-box-shadow-custom-mockup
+  display: inline-block
+  position: relative
+  line-height: 0
+  &:after
+    content: ""
+    position: absolute
+    z-index: -1
+    top: .5rem
+    left: .5rem
+    width: calc(100% - 1rem)
+    height: calc(100% - 1rem)
+    border-radius: 4rem
+    box-shadow: 3rem 3rem 22.5rem -0.5rem rgba(0, 0, 0, 0.1)
+
+.u-default-pt
+  padding-top: 12.5rem
+
+@media screen and (min-width: 30em)
+  .u-default-pt
+    padding-top: 15rem
+
+.u-default-pb
+  padding-bottom: 12.5rem
+
+@media screen and (min-width: 30em)
+  .u-default-pb
+    padding-bottom: 15rem
+
+.u-default-mt
+  padding-top: 12.5rem
+
+@media screen and (min-width: 30em)
+  .u-default-mt
+    padding-top: 15rem
+
+.u-default-mb
+  padding-bottom: 12.5rem
+
+@media screen and (min-width: 30em)
+  .u-default-mb
+    padding-bottom: 15rem

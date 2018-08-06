@@ -1,0 +1,1025 @@
+.u-img-fluid
+  max-width: 100%
+  height: auto
+
+.u-box-shadow-light-static
+  box-shadow: 0 1rem 3rem 0 $rgba-2
+
+.u-box-shadow-light
+  box-shadow: 0 0 0 0 $rgba-1
+  transition: box-shadow .3s ease
+  &.is-active, &:hover
+    box-shadow: 0 1rem 3rem 0 $rgba-2
+
+.u-box-shadow-grey-static
+  box-shadow: 0 2rem 4rem 1rem $rgba-5
+
+.u-box-shadow-grey
+  box-shadow: 0 1px 1px 0 $rgba-5
+  transition: box-shadow .3s ease
+  &.is-active, &:hover
+    box-shadow: 0 2rem 4rem 1rem $rgba-5
+
+.u-sticky
+  position: sticky
+
+.u-negative-gutter
+  margin-right: -.5rem
+  margin-left: -0.5rem
+
+@media screen and (min-width: 48.5em)
+  .u-negative-gutter
+    margin-right: -1rem
+    margin-left: -1rem
+
+@media screen and (min-width: 64em)
+  .u-negative-gutter
+    margin-right: -2rem
+    margin-left: -2rem
+
+.u-negative-gutter-2x
+  margin-right: -1rem
+  margin-left: -1rem
+
+@media screen and (min-width: 48.5em)
+  .u-negative-gutter-2x
+    margin-right: -2rem
+    margin-left: -2rem
+
+@media screen and (min-width: 64em)
+  .u-negative-gutter-2x
+    margin-right: -4rem
+    margin-left: -4rem
+
+.u-text-nowrap
+  white-space: nowrap
+
+.u-rounded-circle
+  border-radius: 50%
+
+.u-h-100
+  height: 100%
+
+.c-icon, .u-w-100
+  width: 100%
+
+.c-icon
+  display: inline-block
+  position: relative
+  padding-bottom: 100%
+  &.is-dark
+    color: $clr-1
+    fill: $clr-1
+  &.is-grey-light
+    color: $clr-12
+    fill: $clr-12
+  &.is-blue
+    color: $clr-blue-4
+    fill: $clr-blue-4
+  &.is-blue-medium
+    color: $clr-blue-5
+    fill: $clr-blue-5
+  &.is-blue-medium-light
+    color: $clr-7
+    fill: $clr-7
+  &.is-blue-light
+    color: $clr-8
+    fill: $clr-8
+  &.is-red
+    color: $clr-red-2
+    fill: $clr-red-2
+  &.is-purple
+    color: $clr-blue-1
+    fill: $clr-blue-1
+  &.is-white
+    color: #fff
+    fill: #fff
+  &.has-ratio1-1
+    padding-bottom: 100%
+  &.has-ratio2-1
+    padding-bottom: 50%
+  &.has-ratio3-1
+    padding-bottom: 33.33%
+  &.has-ratio4-1
+    padding-bottom: 25%
+  &.has-ratio3-4
+    padding-bottom: 133.33%
+  svg
+    display: inline-block
+    left: 0
+    position: absolute
+    top: 0
+
+.c-button
+  line-height: 3rem
+  font-size: 1.75rem
+  padding: .93751rem 2rem .81251rem
+  border-width: 1px
+  border-style: solid
+  display: inline-block
+  cursor: pointer
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  position: relative
+  overflow: hidden
+  vertical-align: middle
+  letter-spacing: .5px
+  outline: 0
+  border-radius: 3px
+  font-weight: 600
+  transition: background .4s ease-out, border-color .4s ease-out, color .4s ease-out, transform .2s ease-out
+  &.is-active, &:active
+    transform: scale(0.9375)
+  &.is-expanded
+    width: 100%
+    text-align: center
+  &.is-clear
+    background: transparent !important
+    &.is-active, &:active, &:hover
+      background: transparent !important
+  &.is-immutable
+    cursor: auto
+  &.is-dark
+    background: $clr-1
+    border-color: $clr-1
+    color: #fff
+    &.is-immutable
+      &.is-active, &:active
+        transform: scale(1)
+      &.is-active, &:active, &:hover
+        background: $clr-1
+        border-color: $clr-1
+        color: #fff
+      &.is-clear
+        &.is-active, &:active, &:hover
+          color: $clr-1
+    &.is-active, &:active, &:hover
+      background-color: $clr-1
+      border-color: $clr-1
+    &.is-clear
+      color: $clr-1
+      &.is-active, &:active, &:hover
+        color: $clr-1
+  &.is-grey-light
+    background: $clr-12
+    border-color: $clr-12
+    color: $clr-1
+    &.is-immutable
+      &.is-active, &:active
+        transform: scale(1)
+      &.is-active, &:active, &:hover
+        background: $clr-12
+        border-color: $clr-12
+        color: $clr-1
+      &.is-clear
+        &.is-active, &:active, &:hover
+          color: $clr-12
+    &.is-active, &:active, &:hover
+      background-color: $clr-12
+      border-color: $clr-12
+    &.is-clear
+      color: $clr-12
+      &.is-active, &:active, &:hover
+        color: $clr-12
+  &.is-blue
+    background: $clr-blue-5
+    border-color: $clr-blue-5
+    color: #fff
+    &.is-immutable
+      &.is-active, &:active
+        transform: scale(1)
+      &.is-active, &:active, &:hover
+        background: $clr-blue-5
+        border-color: $clr-blue-5
+        color: #fff
+      &.is-clear
+        &.is-active, &:active, &:hover
+          color: $clr-blue-5
+    &.is-active, &:active, &:hover
+      background-color: $clr-blue-3
+      border-color: $clr-blue-3
+    &.is-clear
+      color: $clr-blue-5
+      &.is-active, &:active, &:hover
+        color: $clr-blue-3
+  &.is-red
+    background: $clr-red-2
+    border-color: $clr-red-2
+    color: #fff
+    &.is-immutable
+      &.is-active, &:active
+        transform: scale(1)
+      &.is-active, &:active, &:hover
+        background: $clr-red-2
+        border-color: $clr-red-2
+        color: #fff
+      &.is-clear
+        &.is-active, &:active, &:hover
+          color: $clr-red-2
+    &.is-active, &:active, &:hover
+      background-color: $clr-red-1
+      border-color: $clr-red-1
+    &.is-clear
+      color: $clr-red-2
+      &.is-active, &:active, &:hover
+        color: $clr-red-1
+  &.is-white
+    background: #fff
+    border-color: #fff
+    color: $clr-1
+    &.is-immutable
+      &.is-active, &:active
+        transform: scale(1)
+      &.is-active, &:active, &:hover
+        background: #fff
+        border-color: #fff
+        color: $clr-1
+      &.is-clear
+        &.is-active, &:active, &:hover
+          color: #fff
+    &.is-active, &:active, &:hover
+      background-color: #fff
+      border-color: #fff
+    &.is-clear
+      color: #fff
+      &.is-active, &:active, &:hover
+        color: #fff
+  &.size-sm
+    line-height: 2.5rem
+    font-size: 1.75rem
+    padding: .68751rem 2rem .56251rem
+    border-width: 1px
+    border-style: solid
+  &.size-lg
+    line-height: 3.5rem
+    padding: 1.12501rem 4rem
+    font-size: 2rem
+    border-width: 1px
+    border-style: solid
+  &.size-xl
+    font-size: 2rem
+    border-width: 1px
+    border-style: solid
+    line-height: 4rem
+    padding: 1.37501rem 4rem
+
+.c-arrow-link
+  display: inline-block
+  padding-right: 1.5rem
+  line-height: 0
+  .arrow-link-label
+    line-height: 3rem
+    font-size: 2rem
+    padding: 1.00001rem 0
+    border-width: 0
+    border-style: solid
+    display: inline-block
+    font-weight: 600
+  .arrow-link-icon
+    display: inline-block
+    margin-right: .5rem
+    width: 3rem
+    vertical-align: middle
+    transition: transform .2s
+  &:active .arrow-link-icon, &:hover .arrow-link-icon
+    transform: translateX(1rem)
+  &.is-dark
+    color: $clr-1
+    &:active, &:hover
+      color: $clr-1
+  &.is-blue
+    color: $clr-blue-4
+    &:active, &:hover
+      color: $clr-blue-4
+  &.is-white
+    color: #fff
+    &:active, &:hover
+      color: #fff
+
+.c-nav
+  .nav-link
+    display: block
+    font-size: 1.75rem
+    font-weight: 600
+    line-height: 4rem
+    cursor: pointer
+    transition: color .3s ease-out
+    padding: 1rem 1.3rem
+  .list
+    display: -webkit-inline-box
+    display: -ms-inline-flexbox
+    display: inline-flex
+    .item
+      list-style: none
+      &:first-of-type .nav-link
+        padding-left: 0 !important
+      &:last-of-type .nav-link
+        padding-right: 0 !important
+      &.is-active
+        cursor: auto
+        display: block
+        font-size: 1.75rem
+        font-weight: 600
+        line-height: 4rem
+    .sub-item
+      position: relative
+      &:hover .sub-item-menu
+        display: block
+  &.is-dark
+    .nav-link
+      color: $clr-1
+    .list .item.is-active, .nav-link:hover
+      color: $clr-5
+  &.is-grey-dark
+    .nav-link
+      color: $clr-5
+    .list .item.is-active, .nav-link:hover
+      color: #fff
+  &.is-white
+    .nav-link
+      color: #fff
+    .list .item.is-active, .nav-link:hover
+      color: $clr-5
+  &.is-white-o-60
+    .nav-link
+      color: $hsla-7
+    .list .item.is-active, .nav-link:hover
+      color: #fff
+  &.is-purple-light
+    .nav-link
+      color: $clr-6
+    .list .item.is-active, .nav-link:hover
+      color: #fff
+
+.c-footer-nav
+  margin-bottom: -2rem
+  .nav-list
+    padding: 0
+    margin: 0 0 2rem
+    list-style: none
+  .nav-item
+    margin: 2rem 0
+    line-height: 3rem
+    &:first-child
+      margin-top: 0
+    &:last-child
+      margin-bottom: 0
+  a
+    color: #fff
+
+@media screen and (min-width: 30em)
+  .c-footer-nav
+    margin-bottom: 0
+    .nav-list
+      margin: 0
+
+.c-blocks
+  .list
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    -webkit-box-pack: start
+    -ms-flex-pack: start
+    justify-content: flex-start
+    list-style: none
+    padding: 0
+    margin: 0
+  .item, .list
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+  .item
+    -webkit-box-flex: 1
+    -ms-flex: 1 0 35rem
+    flex: 1 0 35rem
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -ms-flex-direction: column
+    flex-direction: column
+
+@media screen and (min-width: 30em)
+  .c-blocks .item
+    -webkit-box-flex: 1
+    -ms-flex: 1 0 40rem
+    flex: 1 0 40rem
+
+.c-nav-link
+  position: relative
+  display: block
+  a
+    line-height: 3rem
+    font-size: 1.75rem
+    margin-bottom: .94626rem
+    padding-top: 1.05376rem
+    display: inline-block
+    color: $clr-5
+  &.is-active a, a:hover
+    color: $clr-1
+    font-weight: 600
+
+@media screen and (min-width: 30em)
+  .c-nav-link a
+    line-height: 3rem
+    font-size: 2rem
+    margin-bottom: 1.01001rem
+    padding-top: 0.99001rem
+
+.c-tile-link
+  position: relative
+  display: block
+  height: 100%
+  padding: 2rem 3rem 2rem 6rem
+  color: $clr-1
+  .icon
+    font-size: 3rem
+    position: absolute
+    top: 2rem
+    left: 0
+    padding-top: 2rem
+    width: 3rem
+    line-height: 0
+  .title span
+    display: inline
+    background: linear-gradient(transparent 63%, $clr-7 0) no-repeat
+    background-size: 0 100%
+    transition: background 0.2s ease-out
+  .description
+    color: $clr-5
+  &:active .icon, &:focus .icon, &:hover .icon
+    color: $clr-blue-4
+  &:active .icon svg, &:focus .icon svg, &:hover .icon svg
+    fill: $clr-blue-4
+  &:active .title span, &:focus .title span, &:hover .title span
+    background-size: 100% 100%
+
+.c-point-link
+  position: relative
+  display: block
+  padding: 1rem 6.75rem 1rem 1.75rem
+  color: $clr-blue-4
+  a
+    color: $clr-blue-4
+  &:before
+    content: "\2022"
+    position: absolute
+    top: 1rem
+    left: 0
+  &.has-star-point:before
+    font-size: 1rem
+    line-height: 3rem
+  &.is-small
+    padding: 1rem 2rem
+    a
+      font-size: 1.75rem
+    &:before
+      font-size: 1.75rem
+      top: 1rem
+  &.is-active
+    color: $clr-1
+    a
+      color: $clr-1
+      text-decoration: none
+
+.c-user-info
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-flex: 0
+  -ms-flex: 0 1 auto
+  flex: 0 1 auto
+  .avatar
+    width: 5rem
+    height: 5rem
+    border-radius: 50%
+    overflow: hidden
+    img
+      max-height: 100%
+      min-width: 100%
+    + .info
+      margin-left: 1.5rem
+  .info-name
+    line-height: 2rem
+    font-size: 1.75rem
+    margin-bottom: -.41374rem
+    padding-top: .41376rem
+    font-weight: 600
+  .info-caption
+    font-size: 1.5rem
+    margin-bottom: -.49749rem
+    padding-top: .49751rem
+    line-height: 2rem
+    color: $clr-5
+
+.c-apps
+  padding: 0
+  margin: 0
+  list-style-type: none
+  a
+    color: #fff
+  .item, a
+    display: inline-block
+  .item + .item
+    margin-left: 4rem
+  .apps-icon
+    display: inline-block
+    width: 3rem
+  .name
+    display: inline-block
+    font-size: 2rem
+    vertical-align: middle
+    margin-top: .5rem
+    margin-bottom: 0.5rem
+
+.c-tabs
+  .tabs-label .item
+    cursor: pointer
+  .tabs-content .item
+    display: none
+    &.selected
+      display: block
+
+.c-logo
+  width: 18rem
+  padding-top: 0.5rem
+
+.c-figure
+  border: 1px solid $clr-12
+  padding: 4rem 4rem 5rem
+  margin-bottom: 5rem
+  border-radius: 3px
+  img
+    margin-top: 1rem
+
+@media screen and (min-width: 30em)
+  .c-figure
+    padding: 3rem 3rem 5rem
+
+@media screen and (min-width: 64em)
+  .c-figure
+    margin-bottom: 0
+    padding: 2rem 3rem 6rem
+    img
+      margin-top: 2rem
+
+.c-collapsible-nav
+  .collapsible-nav-container
+    position: relative
+  .collapsible-nav-toggle-icon
+    position: absolute
+    top: 0
+    right: 0
+    padding: 1rem 0
+    z-index: 1
+    &:before
+      line-height: 2rem
+      font-size: 1.75rem
+      margin-bottom: .58626rem
+      padding-top: 0.41376rem
+  .collapsible-nav-list
+    list-style-type: none
+    margin: 0
+    padding: 0
+  .collapsible-nav-item
+    font-size: 1.75rem
+    position: relative
+    a
+      display: block
+      padding: 1rem 0
+      color: $clr-1
+    &.is-active
+      padding: 1rem 0
+      font-weight: 600
+      a
+        padding: 0
+  &.with-border
+    border-bottom: 1px solid $clr-12
+    .collapsible-nav-item.is-active:after
+      bottom: -1px
+  &.is-large
+    .collapsible-nav-item
+      &.is-active, a
+        padding-top: 1.5rem
+        padding-bottom: 1.5rem
+      &.is-active a, a a
+        padding: 0
+    .collapsible-nav-toggle-icon
+      padding: 1.5rem 0
+  &.is-collapse
+    height: 5rem
+    overflow: hidden
+    .collapsible-nav-item
+      display: none
+      &.is-active
+        display: block
+    &.is-large
+      height: 7rem
+    &.is-small
+      height: 3rem
+
+@media (max-width: 29.9375em)
+  .c-collapsible-nav.is-selective
+    .collapsible-nav-list
+      display: -webkit-box
+      display: -ms-flexbox
+      display: flex
+      -webkit-box-orient: vertical
+      -webkit-box-direction: normal
+      -ms-flex-direction: column
+      flex-direction: column
+    .collapsible-nav-item
+      border-right: 1px solid $clr-12
+      border-left: 1px solid $clr-12
+      font-weight: 500
+      background-color: #fff
+      -webkit-box-ordinal-group: 3
+      -ms-flex-order: 2
+      order: 2
+      a
+        padding-right: 3rem
+        padding-left: 2rem
+      &:last-child
+        border-bottom: 1px solid $clr-12
+      &.is-active
+        -webkit-box-ordinal-group: 2
+        -ms-flex-order: 1
+        order: 1
+        border: 0
+        padding-right: 3rem
+        padding-left: 2rem
+        background-color: $clr-red-2
+        color: #fff
+    .collapsible-nav-toggle-icon
+      font-size: 1.25rem
+      top: 0
+      right: 1rem
+      color: #fff
+    &.is-dark .collapsible-nav-item.is-active
+      background-color: $clr-1
+
+@media screen and (min-width: 30em)
+  .c-collapsible-nav
+    .collapsible-nav-toggle-icon
+      display: none
+    .collapsible-nav-list
+      display: -webkit-box
+      display: -ms-flexbox
+      display: flex
+      -webkit-box-orient: horizontal
+      -webkit-box-direction: normal
+      -ms-flex-direction: row
+      flex-direction: row
+    .collapsible-nav-item
+      margin: 0 1.5rem
+      &:first-child
+        margin-left: 0
+      &:last-child
+        margin-right: 0
+      &:not(.is-active) a:hover
+        color: $clr-12
+      &.is-active
+        &:after
+          content: ""
+          position: absolute
+          right: 0
+          bottom: 0
+          left: 0
+          display: block
+          width: 100%
+          height: 2px
+          background-color: $clr-red-2
+        padding-top: 2rem
+        padding-bottom: 2rem
+      a
+        padding-top: 2rem
+        padding-bottom: 2rem
+    &.is-dark .collapsible-nav-item.is-active:after
+      background-color: $clr-1
+    &.is-small .collapsible-nav-item
+      &.is-active, a
+        padding-top: 0
+        padding-bottom: 0
+    &.is-large .collapsible-nav-item
+      &.is-active, a
+        padding-top: 2rem
+        padding-bottom: 1rem
+
+.c-gallery
+  margin-top: 2rem
+  position: relative
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  .list
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    padding-top: 3.5rem
+    padding-bottom: 2rem
+    overflow-x: scroll
+    .item
+      list-style: none
+      margin-right: 3.5rem
+      z-index: 2
+  .wrap-list
+    overflow: hidden
+    width: 100%
+  .scroll
+    width: 100%
+    -webkit-appearance: none
+    padding-top: 1rem
+    padding-bottom: 1rem
+    transform: translateY(-3rem)
+    &:focus
+      outline: none
+    &::-webkit-slider-runnable-track
+      height: 2rem
+      border: none
+      color: transparent
+      background: linear-gradient(180deg, transparent 0, transparent 1rem, $clr-12 0, $clr-12 1.25rem, transparent 0, transparent 2rem)
+    &::-moz-range-track
+      height: 2rem
+      border: none
+      color: transparent
+      background: linear-gradient(180deg, transparent 0, transparent 1rem, $clr-12 0, $clr-12 1.25rem, transparent 0, transparent 2rem)
+    &::-ms-track
+      background: linear-gradient(180deg, transparent 0, transparent 1rem, $clr-12 0, $clr-12 1.125rem, transparent 0, transparent 2rem)
+    &::-ms-fill-lower, &::-ms-track
+      height: 2rem
+      border: none
+      color: transparent
+    &::-ms-fill-lower
+      background: transparent
+      border: none
+    &:focus
+      &::-ms-fill-lower, &::-ms-fill-upper .c-gallery .scroll::-ms-fill-upper
+        background: transparent
+        border: none
+    &::-webkit-slider-thumb, &::-moz-range-thumb
+      background: $clr-red-2
+      border-radius: 50%
+      cursor: pointer
+      -webkit-appearance: none
+      border: none
+      width: 2rem
+      height: 2rem
+    &::-ms-thumb
+      background: $clr-red-2
+      border-radius: 50%
+      cursor: pointer
+      -webkit-appearance: none
+      border: none
+      width: 1rem
+      height: 1rem
+    &::-ms-tooltip
+      display: none
+
+.c-input
+  input
+    line-height: 3rem
+    font-size: 1.75rem
+    padding: .93751rem 2rem .81251rem
+    width: 100%
+    height: 5rem
+    color: $clr-4
+    border: 1px solid $clr-12
+    font-weight: 500
+    vertical-align: middle
+    border-radius: 3px
+    outline: none
+  &.size-xl input
+    line-height: 4rem
+    font-size: 2rem
+    padding: 1.37501rem 2rem
+    border-width: 1px
+    border-style: solid
+    height: 7rem
+  .error-message
+    line-height: 2rem
+    font-size: 1.75rem
+    margin-bottom: -.56249rem
+    padding-top: .56251rem
+    display: none
+    margin-top: .5rem
+    color: $clr-red-2
+  &.has-error
+    input
+      border-color: $clr-red-2
+    .error-message
+      display: block
+
+.c-badge
+  display: inline-block
+  padding: .5rem
+  line-height: 1
+  min-width: 3rem
+  min-height: 3rem
+  text-align: center
+  border-radius: 50%
+  vertical-align: middle
+  font-weight: 600
+  &.is-purple-light
+    background-color: $clr-6
+    color: $clr-blue-1
+
+.c-profile
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  .profile-icon
+    -webkit-box-flex: 0
+    -ms-flex: 0 0 6rem
+    flex: 0 0 6rem
+    width: 6rem
+    height: 6rem
+    line-height: 0
+  .profile-info
+    padding: 0.2rem 0 0 1.5rem
+  .profile-caption
+    display: block
+    display: -webkit-box
+    -webkit-line-clamp: 1
+    -webkit-box-orient: vertical
+    overflow: hidden
+    text-overflow: ellipsis
+  .profile-title
+    display: block
+    display: -webkit-box
+    -webkit-line-clamp: 1
+    -webkit-box-orient: vertical
+    overflow: hidden
+    text-overflow: ellipsis
+    line-height: 2rem
+    font-size: 2rem
+    margin-bottom: .67001rem
+    padding-top: .33001rem
+    font-weight: 600
+    height: 2.33rem
+  .profile-caption
+    line-height: 2rem
+    font-size: 1.75rem
+    margin-bottom: .44626rem
+    padding-top: .55376rem
+    color: $clr-4
+    height: 2.49rem
+  &.is-large
+    .profile-icon
+      -ms-flex-preferred-size: 9rem
+      flex-basis: 9rem
+      width: 9rem
+      height: 9rem
+    .profile-caption
+      line-height: 2rem
+      font-size: 2rem
+      margin-bottom: .51001rem
+      padding-top: 0.49001rem
+
+.c-card
+  position: relative
+  padding: 2rem
+  border: 1px solid $clr-12
+  border-radius: 5px
+  .card-header + .card-content
+    padding-top: 1rem
+  .card-mark
+    position: absolute
+    &.on-top
+      top: 0
+      left: 50%
+      transform: translate(-50%, -50%)
+  &.is-disabled .card-content
+    opacity: 0.3
+
+@media screen and (min-width: 30em)
+  .c-card
+    padding: 3rem
+
+.s-dropdown
+  position: relative
+  .toggler
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    -webkit-box-pack: justify
+    -ms-flex-pack: justify
+    justify-content: space-between
+    cursor: pointer
+  .toggler-icon
+    display: block
+    margin-left: .5rem
+    justify-self: flex-end
+  .content
+    display: none
+    position: absolute
+    width: 100%
+    top: 100%
+    left: 0
+    &.relative
+      position: relative
+  &.open
+    .toggler-icon
+      transform: scale(-1)
+    .content
+      display: block
+
+.s-slider
+  overflow: hidden
+  .slider-line
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+  &.is-deck
+    position: relative
+    .slider-item
+      opacity: 0
+      z-index: -1
+      height: 0
+      transition: opacity 0.4s cubic-bezier(0, 0, 0.2, 1)
+      &.active
+        opacity: 1
+        z-index: 1
+        height: auto
+  .slider-controls
+    color: #fff
+    &.is-absolute
+      position: absolute
+      width: 100%
+  .controls-line
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+  .slider-control
+    cursor: pointer
+    width: 5rem
+  .slider-index-current-slide
+    text-align: right
+    .index-current-slide
+      display: inline-block
+      width: 2rem
+      text-align: center
+      + .index-current-slide
+        margin-left: 3rem
+      &.active
+        color: transparent
+        position: relative
+        &:before
+          content: " "
+          width: 2rem
+          height: 2rem
+          position: absolute
+          top: calc(50% - 1rem)
+          left: calc(-50% + 1rem)
+          background: #fff
+          border-radius: 1rem
+
+.l-header
+  width: 100%
+  padding-top: .5rem
+  padding-bottom: 0.5rem
+  .header-nav-control .item
+    margin: 0 0.625rem
+    &:last-of-type
+      margin-right: 0
+    &:first-of-type
+      margin-left: 0
+
+.l-footer
+  background: $clr-1
+  padding-top: 6rem
+  padding-bottom: 4rem
+  color: #fff
+  .social-apps
+    padding-top: 6rem
+    height: 100%
+  .apps, .licence
+    padding-top: 5rem
+  .payment-systems
+    padding-top: 2rem
+  &.is-light
+    background: #fff
+    color: $clr-3
+
+@media screen and (min-width: 30em)
+  .l-footer .apps
+    padding-top: 0
+
+@media screen and (min-width: 64em)
+  .l-footer
+    .send-request-btn
+      padding-top: 0
+    .nav, .social-apps
+      width: auto
+    .apps
+      padding-top: 6rem

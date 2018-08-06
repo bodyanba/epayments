@@ -1,0 +1,153 @@
+html
+  font-size: 8px
+  color: $clr-1
+  -webkit-text-size-adjust: 100%
+  -ms-text-size-adjust: 100%
+
+body
+  font-size: 2rem
+  font-weight: 500
+  line-height: 3rem
+  font-family: Graphik, sans-serif
+  font-style: normal
+
+h1, h2
+  font-family: Graphik, sans-serif
+  font-style: normal
+  font-weight: 700
+
+h3, h4, h5, h6
+  font-family: Graphik, sans-serif
+  font-style: normal
+  font-weight: 600
+
+h1
+  margin-top: 0
+  line-height: 5rem
+  font-size: 4rem
+  margin-bottom: .84001rem
+  padding-top: 1.16001rem
+
+h2
+  line-height: 4rem
+  font-size: 3rem
+  margin-bottom: 1.00501rem
+  padding-top: 0.99501rem
+
+h3
+  line-height: 5rem
+  font-size: 4rem
+  margin-bottom: .84001rem
+  padding-top: 1.16001rem
+
+h4
+  line-height: 4rem
+  font-size: 3rem
+  margin-bottom: 1.00501rem
+  padding-top: 0.99501rem
+
+h5
+  line-height: 3rem
+  font-size: 2rem
+  margin-bottom: .17001rem
+  padding-top: 0.83001rem
+
+h6
+  line-height: 2.5rem
+  font-size: 1.75rem
+  margin-bottom: -.16374rem
+  padding-top: 0.66376rem
+
+@media screen and (min-width: 30em)
+  h1
+    line-height: 6rem
+    font-size: 5rem
+    margin-bottom: .67501rem
+    padding-top: 1.32501rem
+  h2
+    line-height: 5rem
+    font-size: 4rem
+    margin-bottom: .84001rem
+    padding-top: 1.16001rem
+
+@media screen and (min-width: 48.5em)
+  h5
+    line-height: 3.5rem
+    font-size: 2.25rem
+    margin-bottom: .50376rem
+    padding-top: 0.99626rem
+
+@media screen and (min-width: 64em)
+  h1
+    line-height: 7rem
+    font-size: 6rem
+    margin-bottom: .51001rem
+    padding-top: 1.49001rem
+  h2
+    line-height: 6rem
+    font-size: 5rem
+    margin-bottom: .67501rem
+    padding-top: 1.32501rem
+
+.p, p
+  line-height: 3rem
+  font-size: 2rem
+  margin-bottom: .01001rem
+  padding-top: 0.99001rem
+
+.caption
+  font-size: 1.5rem
+  font-family: Graphik, sans-serif
+  font-style: normal
+  font-weight: 500
+
+small
+  font-family: Graphik, sans-serif
+  font-style: normal
+  font-weight: 500
+  font-size: 1.75rem
+  margin-bottom: -.55374rem
+  padding-top: 0.55376rem
+
+.caption, small
+  line-height: 2rem
+
+.caption
+  margin-bottom: .38251rem
+  padding-top: .61751rem
+  color: $clr-4
+
+strong
+  font-weight: 600
+
+a
+  text-decoration: none
+  &.has-underline
+    display: inline
+    padding-bottom: 1px
+    background-repeat: no-repeat
+    background-size: 201% 1px
+    background-position: 101% bottom
+    transition: background 0.2s ease-out
+    &:hover
+      background-position: 0 bottom
+    &.is-dark
+      color: $clr-1
+      background-image: linear-gradient(90deg, $clr-1 50%, $clr-5 0)
+    &.is-grey-dark
+      color: $clr-5
+      background-image: linear-gradient(90deg, $clr-5 50%, $clr-12 0)
+    &.is-blue
+      color: $clr-blue-4
+      background-image: linear-gradient(90deg, $clr-blue-4 50%, $clr-7 0)
+    &.is-white
+      color: #fff
+      background-image: linear-gradient(90deg, #fff 50%, $rgba-9 0)
+  &.has-tile
+    display: inline
+    background: linear-gradient(transparent 63%, $clr-7 0) no-repeat
+    background-size: 0 100%
+    transition: background .2s ease-out
+    color: $clr-1
+    &:active, &:focus, &:hover
+      background-size: 100% 100%
